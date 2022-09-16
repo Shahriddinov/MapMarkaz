@@ -10,6 +10,7 @@ const Bottom = () => {
     return (
     <div className='bottom'>
 
+
         <div className="left">
 
             <div className="title">{t("names")}</div>

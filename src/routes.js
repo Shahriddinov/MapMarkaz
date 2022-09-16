@@ -15,6 +15,8 @@ const AboutUs = lazy(() => import("./pages/AboutUs"));
 
 const routes = [
 	{ path: "", element: Home },
+	{path: "/contacts", element: Contacts},
+	{path: "/aboutus", element: AboutUs}
 
 ];
 
@@ -29,8 +31,6 @@ const routes = [
 							return <Route key={key} path={route.path} element={<RouteComponent />} />;
 						})}
 						<Route path="*" element={<NotFound />} />
-						<Route path="contacts" element={<Contacts />} />
-						<Route path="aboutus" element={<AboutUs />} />
 					</Routes>
 				</Suspense>
 			</Layout>
