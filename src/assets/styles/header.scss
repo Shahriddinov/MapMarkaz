@@ -1,0 +1,148 @@
+.navbar {
+  display: flex;
+  width: 96.3%;
+  padding-left: 50px;
+  //margin-top: 20px;
+  // border: 1px solid black;
+
+  
+  .navLeft {
+    width: 69.2%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+    
+
+
+    .navTitle {
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 37px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .options{
+      display: flex;
+      .flagButton{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: none;
+        background: inherit;
+        color: blue;
+        .iconFlag{
+          width: 20px;
+          height: 20px;
+          object-fit: fill;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  .navRight {
+    width: 35.5%;
+    background-color: #0B0E14;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+
+    ul {
+      color: white;
+      list-style: none;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 40px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.6);
+
+      li:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .sidebarNav{
+    display: none;
+  }
+
+  .side_bar{
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    display: block;
+    background-color: #ffffff;
+    display: none;
+    // border: 1px solid black;
+    z-index: 999;
+    float: right;
+  }
+
+}
+
+@media (max-width:767px){
+  .navbar{
+    padding-left: 20px;
+    .navLeft{
+      width: 80%;
+
+      .logo{
+        width: 40px;
+        height: 40px;
+      }
+
+      .navTitle{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+      }
+
+      select{
+        display: none;
+      }
+    }
+
+    .navRight{
+      display: none;
+    }
+
+    .sidebarNav{
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+}
+
+@media (min-width:767px) and (max-width:991px){
+  .navbar{
+    padding-left: 20px;
+   
+    .navLeft{
+      width:80%;
+
+      select{
+        display: none;
+      }
+    }
+
+    .navRight{
+      display: none;
+    }
+
+    .sidebarNav{
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

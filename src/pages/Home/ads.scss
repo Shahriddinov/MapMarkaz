@@ -1,0 +1,39 @@
+@import './global';
+.ads{
+    width: 94%;
+    padding: 50px 0;
+
+    .title{
+      @include title();
+    }
+    .box{
+      background-color: #ffffff;
+      padding: 20px 5px;
+      margin-bottom: 10px;
+
+      .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+          margin-left: 15px;
+          font-family: 'Raleway';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 25px;
+          color: #1A212C;
+
+        }
+
+        img{
+          margin-right: 15px;
+        }
+      }
+      .bottom{
+        display: flex;
+        justify-content: start;
+      }
+    }
+  }
+  

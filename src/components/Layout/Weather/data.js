@@ -1,0 +1,32 @@
+export const cities = [
+    {
+        id:1,
+        value:'tashkent',
+        name:'Ташкент',
+    },
+    {
+        id:2,
+        value:'samarkand',
+        name:'Самарканд',
+    },
+    {
+        id:3,
+        value:'bukhara',
+        name:'Бухара',
+    },
+    {
+        id:4,
+        value:'nukus',
+        name:'Нукус',
+    },
+    {
+        id:5,
+        value:'andijan',
+        name:'Андижан',
+    },
+    {
+        id:6,
+        value:'namangan',
+        name:'Наманган',
+    },
+]

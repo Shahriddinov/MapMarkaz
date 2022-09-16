@@ -1,0 +1,243 @@
+@import '../Home/global';
+
+.contacts{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    .left{
+        width: 67%;
+        padding: 25px 96px 20px 50px;
+        .title{
+            @include title();
+        }
+        .text{
+            @include text();
+        }
+        .inputs{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 10px;
+            .input{
+                width: 48%;
+                justify-content: space-between;
+            }
+            label{
+                height: 28px;
+                width: 130px;
+                font-family: 'Montserrat';
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #6F6F6F;
+            }
+            input{
+                margin-top: 10px;
+                height: 35px;
+                width: 95%;
+                left: 0px;
+                top: 38px;
+                border:1px solid grey;
+                padding: 5px;
+                justify-content: space-between;
+                font-size: 20px;
+            }
+        
+        
+        }
+        .textarea{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 10px;
+
+            label{
+                height: 28px;
+                width: 130px;
+                font-family: 'Montserrat';
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #6F6F6F;
+            }
+            textarea{
+                margin-top: 10px;
+                width: 92%;
+                height: 150px;
+                padding: 10px;
+                outline: none;
+
+            }
+        }
+
+           .btns{
+            // padding:20px 20px 0 0;
+            display: flex;
+            justify-content: space-around;
+
+            button{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 14px 25px;
+                gap: 12.69px;
+                border: none;
+                width: 45%;
+                height: 50px;
+                font-weight: normal;
+                color: white;
+                background: #1D71B8;
+                font-size: 18px;
+                
+                box-shadow: 0px 13.434px 39.1824px rgba(21, 76, 238, 0.21);
+                background: rgba(29, 113, 184, 1);
+            }
+            button:nth-child(2){
+                background: #191E29;
+
+            }
+        }
+    }
+    .right{
+        width: 38.9%;
+        position: relative;
+        font-family: 'Raleway';
+        background: rgba(0, 0, 0, 0.651);
+
+        .info{
+            position: absolute;
+            color:white;
+            padding: 40px 0 0 40px;
+            z-index: 999;
+            width: 100%;
+            height: 55%;
+            background: rgba(26, 25, 25, 0.521);
+            backdrop-filter: blur(30px);
+            bottom: 0;
+            overflow: hidden;
+
+            p{
+                width: 350px;
+                margin-top: 10px;
+            }
+
+            .socials{
+                display: flex;
+                padding: 10px 10px 0 0;
+
+                .insta{
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%);;
+                }
+
+                .facebook{
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: rgba(11, 132, 238, 1);
+                    margin-left:10px;
+                    
+                }
+
+                .telegram{
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: rgba(39, 166, 229, 1);
+                    margin-left:10px;
+
+                }
+
+                .vk{
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: rgba(0, 119, 255, 1);
+                    margin-left:10px;
+
+                }
+
+
+                .tiktok{
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: #191E29;
+                    margin-left:10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+    .contacts{
+        display: block;
+        width: 98%;
+        .left{
+            width: 100%;
+            margin-left: -20px;
+
+            .inputs{
+                display: block;
+                
+                .input{
+                    width: 95%;
+
+                    input{
+                        width: 100%;
+
+                    }
+                }
+            }
+        }
+        .right{
+            width: 100%;
+
+            .info{
+                height:72%
+            }
+        }
+    }
+}
+
+@media (min-width:767px) and (max-width:991px){
+    .contacts{
+        display: block;
+        width: 98%;
+        .left{
+            width: 100%;
+            margin-left: -20px;
+        }
+
+        .right{
+            width: 100%;
+
+            .info{
+                height:72%
+            }
+        }
+    }
+}

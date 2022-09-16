@@ -1,0 +1,183 @@
+@import './global';
+
+.aboutUs{
+    padding: 200px 10px 20px 0;
+    height: 1200px;
+    width: 99%;
+    overflow-x: hidden;
+    .first{
+      width: 95%;
+      display: flex;
+      position: absolute;
+      .img{
+        width: 50%;
+
+      }
+      .text{
+        width: 47%;
+        align-items: center;
+
+        .fp{
+           @include title();
+        }
+
+        .sp{
+          @include text();
+          text-align: justify;
+          text-indent: 30px;
+       }
+      }
+    }
+
+    .second{
+      margin: 350px 0 0 235px;
+      display: flex;
+      width: 75%;
+      position: absolute;
+      float: right;
+      justify-content: space-around;
+
+      .img{
+        width: 50%;
+
+      }
+      .text{
+        width: 50%;
+        align-items: center;
+  
+  
+        .sp{
+          @include text();
+          text-align: justify;
+          text-indent: 30px;
+       }
+      }
+    }
+
+    .third{
+
+      margin-top: 650px;
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+      align-items: center;
+      .img{
+        width: 40%;
+
+      }
+      .text{
+
+        width: 52%;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+  
+        .sp{
+          @include text();
+          text-align: justify;
+          text-indent: 30px;
+
+       }
+       button{
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        cursor: pointer;
+        color: #1D71B8;
+        border: none;
+        float: right;
+         
+       }
+      }
+    }
+  }
+
+@media (max-width:991px){
+  .aboutUs{
+    display: block;
+    .first{
+      position: relative;
+      display: block;
+      .img{
+        width: 100%;
+        img{
+          transform: rotate(10deg);
+        }
+      }
+      .text{
+        width: 100%;
+
+        .fp{
+          text-align: center;
+        }
+        .sp{
+          font-size: 14px;
+        }
+      }
+    }
+    .second{
+      margin-top: 0;
+      position: relative;
+      width: 100%;
+      .img{
+        display: none;
+      }
+
+      .text{
+        width: 100%;
+        .sp{
+          font-size: 14px;
+        }
+      }
+    }
+    .third{
+      width: 100%;
+      margin-top: -30px;
+      position: relative;
+      .img{
+        display: none;
+      }
+
+      .text{
+        width: 100%;
+        .sp{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+}
+
+@media (min-width:991px) and (max-width:1198px){
+    .aboutUs{
+      .first{
+        .text{
+          .sp{
+            font-size: 14px;
+          }
+        }
+      }
+      .second{
+        margin-top: 300px;
+        .text{
+          .sp{
+            font-size: 14px;
+          }
+        }
+      }
+      .third{
+        margin-top: 550px;
+        .text{
+          .sp{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  
+}
+

@@ -1,0 +1,35 @@
+.sidebar{
+
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    div{
+        float: right;
+        font-size: 25px;
+        font-weight: 700;
+        margin: 20px 0 0 20px;
+        cursor: pointer;
+    }
+    p{
+
+        width: 100%;
+        font-size: 20px;
+        font-family: "Montserrat";
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+
+        select, option{
+            width: 20%;
+            outline: none;
+            text-align: center;
+            padding:5px;
+            font-weight: 500;
+            font-size: 20px;
+
+        }
+    }
+
+}

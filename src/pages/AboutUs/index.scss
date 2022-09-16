@@ -1,0 +1,142 @@
+@import '../Home/global';
+
+.aboutUsMore{
+    width: 96.3%;
+    padding-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    .mainDiv{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow: hidden;
+        .left{
+            width: 66%;
+            padding-top: 20px;
+            // background-color: #ffffff;
+            // border: 1px solid red;
+    
+            p{
+                @include title;    
+                margin-top: 0;                    
+            }
+        }
+        .right{
+            width: 34%;
+        }
+    }
+
+    .box{
+        margin-top: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .images{
+            width: 40%;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+        .text{
+            width: 53%;
+            
+            h3{ 
+                @include title;    
+                margin: 0;  
+                
+            }
+            p{
+                @include text;
+                margin: 0;
+            }
+        }
+    }
+    .content{
+        width: 100%;
+        padding: 25px 0;
+
+    }
+
+    .imgPosts{
+        width: 100%;
+        padding: 25px 0;
+
+    }
+    .bottom{
+        width: 100%;
+        padding: 25px 0;
+    }
+}
+
+@media (max-width:767px){
+    .aboutUsMore{
+        padding-left: 20px;
+        .mainDiv{
+            
+           .left{
+            width: 56%;
+           }
+           .right{
+            display: none;
+           }
+        }
+
+        .box{
+            display: block;
+            .images{
+                width: 100%;
+
+                img{
+                    width: 50%;
+                }
+            }
+
+            .text{
+
+                width: 100%;
+
+                p{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:767px) and (max-width:991px){
+    .aboutUsMore{
+        padding-left: 20px;
+
+        .mainDiv{
+           .left{
+            width: 60%;
+            p{
+                text-align: center;
+            }
+            
+        }
+        .right{
+            display: none;
+        }
+        
+        }
+        .box{
+            margin-top: 0;
+        }
+    }
+}
+
+@media (min-width:991px) and (max-width:1336px){
+    .aboutUsMore{
+        .mainDiv{
+           .left{
+            width: 66%;
+           }
+        }
+    }
+}

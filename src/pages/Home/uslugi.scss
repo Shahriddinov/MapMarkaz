@@ -1,0 +1,93 @@
+@import './global';
+
+.uslugi{
+    margin-left: -55px;
+    background-image: url('../../assets/images/dark_bg.svg');
+    padding: 100px 10px;
+    color: #ffffff;
+    background-color: #191E29;
+    
+    .cards{
+        margin-top: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+
+        
+        p{
+          width: 100%;
+          font-family: 'Raleway';
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 26px;
+          letter-spacing: 0em;
+          text-align: center;
+        }
+        
+        .card{
+          margin-bottom: 50px;
+          height: 399px;
+          max-width: 430px;
+          background-color: rgba(40, 46, 61, 1);
+          text-align: center;
+          position: relative;
+          
+          @media (max-width:575px){
+            width: 335px;
+            height: 352px;
+
+            img{
+              width: 100%;
+            }
+          }
+          .btnRight{
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border: none;
+            height: 50px;
+            left: 83.72%;
+            right: 4.65%;
+            top: 119px;
+            background: rgba(25, 30, 41, 0.5);
+            border-radius: 50px;
+        }
+        .btnLeft{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            border: none;
+            position: absolute;
+            height: 50px;
+            left: 5.28%;
+            right: 83.09%;
+            top: 119px;        
+            background: rgba(25, 30, 41, 0.5);
+            border-radius: 50px;
+            
+        }
+        }
+    }
+
+  }
+  @media (max-width:991px){
+    .uslugi{
+      margin-left: -20px;
+      .cards{
+        p{
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 130%;
+        }
+      }
+    }
+  }

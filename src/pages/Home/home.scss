@@ -1,0 +1,11 @@
+@import './global';
+
+.Home{
+  width: 96%;
+  padding-left: 54px;
+  // overflow: hidden;
+  
+  @media (max-width:991px) {
+    padding-left: 20px;
+  }
+}
