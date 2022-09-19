@@ -1,5 +1,5 @@
-import React from 'react'
-import { posts } from './images'
+import React, {useState, useEffect} from 'react'
+import { heros } from './images'
 import './ImgPosts.scss'
 import cher from '../../assets/images/cherte.svg'
 import sloy1 from '../../assets/images/sloy1.svg'
@@ -13,16 +13,34 @@ import sloy8 from '../../assets/images/sloy8.svg'
 import sloy9 from '../../assets/images/sloy9.svg'
 import sloy10 from '../../assets/images/sloy10.svg'
 import { useTranslation } from "react-i18next";
+import doGet from 'components/api/api'
+
 
 const ImgPosts = () => {
     const {t} = useTranslation();
+    const [posts, setPost] = useState([])
+    const [heros, setHeros] = useState([])
+
+    async function getHeros(){
+        const res = await doGet('Heros/')
+        setHeros(res.data)
+    }
+    async function getPosts(){
+        const res = await doGet('AboutUsMore/')
+        setPost(res.data)
+    }
+
+    useEffect(()=>{
+        getHeros()
+        getPosts()
+    },[])
 
     return (
     <div className='imgPosts'>
         <p>{t("heroes")}</p>
 
         <div className="posts">
-            {posts.map((item)=>{
+            {heros.map((item)=>{
                 return <img src={item.img} key={item.id} width='33%'/>
             })}
         </div>
@@ -32,7 +50,19 @@ const ImgPosts = () => {
             <div> <img src={cher} width='100%'/></div>
         </div>
 
-        <div className="someClass">
+        {posts.map((item)=>{
+            return(
+                <div className="someClass" key={item.id}>
+                    <p> {item.header}</p>
+                    <div className='d_img'>
+                         <img src={item.images} width='50%'/> 
+                         <img src={item.images} width='50%'/></div>
+                    </div>
+            )
+        })}
+
+
+        {/* <div className="someClass">
             <p> {t("factory")}</p>
             <div className='d_img'> <img src={sloy1} width='50%'/> <img src={sloy2} width='50%'/></div>
         </div>
@@ -56,7 +86,7 @@ const ImgPosts = () => {
             <p> {t("earthquake")} 26.04.1966</p>
             <span>{t("result")}</span>
             <div className='d_img'><img src={sloy9} width='50%'/> <img src={sloy10} width='50% '/></div>
-        </div>
+        </div> */}
 
     </div>
   )

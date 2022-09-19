@@ -4,8 +4,9 @@ import firstImg from '../../assets/images/firstImg.svg'
 import sectImg from '../../assets/images/secImg.svg'
 import thirdImg from '../../assets/images/thirdImg.svg'
 import { useEffect } from 'react'
-import url from '../../components/api/api'
 import { useTranslation } from "react-i18next";
+import doGet from 'components/api/api'
+
 
 
 
@@ -14,7 +15,18 @@ const AboutUs = () => {
 	const {t} = useTranslation();
 
 	const r = '>'
-	const [data, setData] = useState([])
+
+	const [text, setText] = useState([])
+
+	// 	async function getAboutUs(){
+	// 		const res = await doGet('AboutUs/')
+	// 		setText(res.data[0])
+	// 	}
+	// useEffect(()=>{
+	// 	getAboutUs()
+	// },[])
+
+	// console.log('aboutUs', text);
 
   return (
     <div className="aboutUs">

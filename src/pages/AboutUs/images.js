@@ -34,7 +34,7 @@ import hero33 from '../../assets/images/hero33.svg'
 import hero34 from '../../assets/images/hero34.svg'
 import hero35 from '../../assets/images/hero35.svg'
 
-export const posts = [
+export const heros = [
     {
         id:1,
         img: hero1,

@@ -15,22 +15,21 @@ import item3 from '../../assets/images/item3.svg'
 import item4 from '../../assets/images/item4.svg'
 import item5 from '../../assets/images/item5.svg'
 import item6 from '../../assets/images/item6.svg'
-import url from '../../components/api/api'
 import { useTranslation } from "react-i18next";
+import doGet from 'components/api/api'
+
 
 const Content = () => {
     const {t} = useTranslation();
-    const [hero, setHero] = useState()
+    const [soldier, setSoldier] = useState()
 
+    // async function getHeros(){
+    //     const res = await doGet('History/')
+    //     setSoldier(res.data)
+    // }
     // useEffect(()=>{
-    //     async function getImgs(){
-    //         const res = url.get('/Heros')
-    //         setHero(res)
-    //     }
-
-    //     getImgs()
+    //     getHeros()
     // },[])
-    // console.log('heroImgS', hero);
 
   return (
     <div className='content'>
@@ -38,6 +37,10 @@ const Content = () => {
         <div className="mainPost">
             <div className="images">
                 
+                <div className='image_class'>
+                    <img src={''} />
+                    <p></p>
+                </div>
                 {/* {hero.map((item)=>{return(
                     <div className='image_class' key={item.id}>
                         <img src={item.img} />

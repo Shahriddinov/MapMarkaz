@@ -12,11 +12,11 @@ const Footer = () => {
 
 	const { t } = useTranslation();
 
-	const [contact, setContact] = useState()
+	const [contact, setContact] = useState([])
 
 	async function contInfo(){
 		const res = await doGet('Contacts/')
-		setContact(res.data[0])
+		setContact(res.data)
 	}
 	useEffect(()=>{
 		contInfo()
@@ -41,7 +41,7 @@ const Footer = () => {
 				<p> <img src={phone}/>  {t("duty")}: </p>
                 <p> <img src={phone}/>  {t("accounting")}: +998 71 233-43-44 </p>
                 <p> <img src={phone}/>  {t("telegram")}: +998 99 353-49-22 </p>
-                <p> <img src={email} />  mapmarkaz@umail.uz </p>
+                <p> <img src={email}/>  mapmarkaz@umail.uz </p>
                 <p> <img src={loc}/>  100060, {t("road")}, 93. </p>
 			</div>
 
