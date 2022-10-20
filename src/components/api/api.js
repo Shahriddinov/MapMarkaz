@@ -5,6 +5,6 @@ import axios from "axios";
 // })
 
 function doGet(url){
-    return axios.get('https://mapmarkaz.uz/'+url)
+    return axios.get('http://backend.mapmarkaz.uz/'+url)
 }
 export default doGet;

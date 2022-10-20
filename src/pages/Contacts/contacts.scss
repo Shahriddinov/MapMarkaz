@@ -1,0 +1,245 @@
+@import '../global';
+
+@mixin sm-links {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.m-title{
+    @include grey-text();
+}
+.contacts{
+    display: flex;
+    width: 1440px;
+
+    .contact-left{
+        padding: 50px;
+        width: 864px;
+
+        .title{
+            @include title();
+        }
+
+        .contact-text{
+            margin-top: 50px;
+            @include grey-text();
+        }
+
+        .send-contacts{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .send-fullname{
+                width: 48%;
+                input{
+                    width: 100%;
+                    padding: 5px;
+                    font-size: 18px;
+                    height: 40px;
+                }
+            }
+
+            .send-number{
+                width: 48%;
+                input{
+                    width: 100%;
+                    font-size: 18px;
+                    padding: 5px;
+                    height: 40px;
+                }
+            }
+            .send-text{
+                width: 100%;
+                textarea{
+                    width: 100%;
+                    font-size: 18px;
+                    padding: 5px;
+                    height: 130px;
+                    outline: none;
+                }
+            }
+
+            .send-btns{
+                width: 100%;
+                padding-top: 30px;
+                display: flex;
+                justify-content: space-between;
+
+                    .btn-send{
+                        width: 47%;
+                        @include blue-btn();
+                    }
+                    
+                    .btn-call{
+                        width: 47%;
+                        @include dark-btn();
+                    }
+            }
+        }
+    }   
+
+    .contact-right{
+        width: 551px;
+        overflow-y: hidden;
+        color: white;
+        
+        .cont-link-class{
+            padding: 50px;
+            font-family: 'Raleway';
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            z-index: 999;
+            margin-top: -350px;
+
+            .cl-title{
+                font-style: normal;
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 130%;
+            }
+
+            .cl-title-it{
+                padding: 8px 0;
+                font-family: 'SF Pro Display';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 138.19%;
+                z-index: 999;
+            }
+        }
+        
+        .social-media-link{
+            width: 100%;
+            height: 142px;
+            display: flex;
+            align-items: baseline;
+            background-color: #1A212C;;
+            margin-top: -55px;
+            z-index: 999;
+
+            .sm-link-item{
+                width: 100%;
+                height: 100%;
+                padding-left: 45px;
+                display: flex;
+                align-items: center;
+                backdrop-filter: blur(15px);
+                background:  #161C22;
+
+                .insta{
+                    @include sm-links();
+                    background: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%);
+                }
+                .face{
+                    @include sm-links();
+                    background: #0B84EE;
+                }
+                .tg{
+                    @include sm-links();
+                    background: rgba(39, 166, 229, 1);
+                }
+                .vk{
+                    @include sm-links();
+                    background: rgba(0, 119, 255, 1);
+                }
+                .tt{
+                    @include sm-links();
+                    background: #191E29;
+                }
+            }
+            
+        }
+    }
+
+}
+
+@media (min-width:1200px) and (max-width:1440px){
+    .contacts{
+        width: 100%;
+
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    .contacts{
+        width: 100%;
+
+    }
+}
+
+@media (min-width: 767px) and (max-width: 991px){
+    .contacts{
+        width: 100%;
+        display: block;
+
+        .contact-left{
+            width: 80%;
+        }
+
+        .contact-right{
+            width: 100%;
+        }
+
+    }
+}
+@media (min-width: 576px) and (max-width: 766px){
+
+    .contacts{
+        width: 100%;
+        display: block;
+
+        .contact-left{
+            width: 80%;
+        }
+
+        .contact-right{
+            width: 100%;
+        }
+
+    }
+}
+
+@media (max-width: 575.98px){
+    .contacts{
+        width: 100%;
+        display: block;
+
+        .contact-left{
+            width: 80%;
+            .title{
+                font-size: 25px;
+            }
+
+            .send-contacts{
+                display: block;
+
+                .send-fullname{
+                    width: 100%;
+                }
+                .send-number{
+                    width: 100%;
+
+                }
+                .send-btns{
+                    display: block;
+                    .btn-call, .btn-send{
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+                }
+
+            }
+        }
+
+        .contact-right{
+            width: 9%;
+        }
+
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import i18next from "i18next";
-
+import './App.css';
 import systemActions from "store/actions/system";
 import config from "config";
 import { helpers } from "services";
@@ -32,7 +32,7 @@ function App({ children }) {
 
 	return (
 		<>
-			<div id="custom-alert-zone" />
+			<div className="main-page-mapMarkaz" id="custom-alert-zone" />
 			{children}
 		</>
 	);

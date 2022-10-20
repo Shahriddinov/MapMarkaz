@@ -4,7 +4,7 @@ import './footer.scss'
 import logo from '../../../assets/images/Logo.svg'
 import phone from '../../../assets/images/phone_icon.svg'
 import loc from '../../../assets/images/location.svg'
-import up from '../../../assets/images/up.svg'
+import up from '../../../assets/images/upbt.png'
 import email from '../../../assets/images/Email.svg'
 import doGet from '../../api/api'
 
@@ -12,24 +12,34 @@ const Footer = () => {
 
 	const { t } = useTranslation();
 
+	
+	function scrollTop(){
+		window.scrollTo(0,0)
+	}
+
 	const [contact, setContact] = useState([])
+	const [requisite, setRequisite] = useState([])
 
 	async function contInfo(){
-		const res = await doGet('Contacts/')
-		setContact(res.data)
+		const cont = await doGet('Contacts/')
+		const req = await doGet('Requisites/')
+		setContact(cont.data)
+		setRequisite(req.data)
 	}
+	
 	useEffect(()=>{
 		contInfo()
 	},[])
 
-	console.log('contacts', contact);
+
 
 	return (
 		
 		<div className="footer">
 
 			<div className="card">
-				<h3><img src={logo} width='34'/> <span>mapmarkaz.uz</span></h3>
+				<h3><img src={logo} width='34'/> 
+				<span>mapmarkaz.uz</span></h3>
 				<p>
 					{t("printed")}
 				</p>
@@ -38,20 +48,20 @@ const Footer = () => {
 			<div className="card">
 				<h3>{t("contact")}</h3>
 
-				<p> <img src={phone}/>  {t("duty")}: </p>
-                <p> <img src={phone}/>  {t("accounting")}: +998 71 233-43-44 </p>
-                <p> <img src={phone}/>  {t("telegram")}: +998 99 353-49-22 </p>
-                <p> <img src={email}/>  mapmarkaz@umail.uz </p>
-                <p> <img src={loc}/>  100060, {t("road")}, 93. </p>
+				<p> <img src={phone}/>  {t("duty")}: {contact[0]?.dejurniy}</p>
+                <p> <img src={phone}/>  {t("accounting")}: {contact[0]?.buhgalteriya} </p>
+                <p> <img src={phone}/>  {t("telegram")}: {contact[0]?.telegram} </p>
+                <p> <img src={email}/>  {contact[0]?.email} </p>
+                <p> <img src={loc}/> {contact[0]?.location} </p>
 			</div>
 
 			<div className="card">
 				<h3>{t("requisites")}</h3>
-				<p> {t("bank")}: {t("filia")}</p>
-                <p> {t("t/c")}:  20203000000447954002 </p>
-                <p> {t("TIN")}:  201052239 </p>
-                <p> ОКОНХ : 19400 </p>
-                <p> ОКЕД :  18120 </p>
+				<p> {t("bank")}: {requisite[0]?.bank}</p>
+                <p> {t("t/c")}:  {requisite[0]?.RS} </p>
+                <p> {t("TIN")}:  {requisite[0]?.INN} </p>
+                <p> ОКОНХ : {requisite[0]?.OKOHX} </p>
+                <p> ОКЕД :  {requisite[0]?.OKED} </p>
 				<h3>{t("copy")}</h3>
 			</div>
 
@@ -60,7 +70,7 @@ const Footer = () => {
 					<p style={{float:'left'}}>Copyright © 2022 mapmarkaz</p>
 				
 
-					<button><img src={up} /></button>
+					<button onClick={scrollTop} id='myBtn'><img src={up} /></button>
 				
 
 					<p style={{float:'right'}}>Developer by Napa</p>

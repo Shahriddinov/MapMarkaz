@@ -1,0 +1,167 @@
+.flags-card{
+    width: 1440px;
+    display: flex;
+    background-color: white;
+
+    .flags{
+        padding: 30px 0;
+        width: 63.6%;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: justify;
+        display: flex;
+        justify-content: space-around;
+
+        .flags-leftbox{
+            width: 20%;
+
+            .flags-leftbox-links{
+                text-decoration-line: underline;
+                color: #1D71B8;
+            }
+
+        }
+
+        .flags-rightbox{
+            width: 60%;
+
+            .rightbox-mini-flag{
+                display: flex;
+                flex-wrap: wrap;
+
+                p{
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+
+    .weather-bottom-class{
+        width: 36.5%;
+        background: rgba(11, 14, 20, 1);
+        overflow: hidden;
+        .wea-bottom{
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            height:100%;
+            
+        
+            .wea-inputs{
+                display: flex;
+                justify-content: space-around;
+        
+                select{
+                    background-color: transparent;
+                    color: white;
+                    font-family: 'Montserrat';
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    padding: 10px 20px;
+                    width: 250px;
+                    border: 1px solid white;
+                }
+                option{
+                    color: #0B0E14;
+                }
+        
+                .inp{
+                    background-color: transparent;
+                    color: white;
+                    font-family: 'Montserrat';
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 24px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    padding: 10px 20px;
+                    width: 150px;
+                }
+            }
+        
+            .tepms{
+                padding-top: 10px;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+        
+        
+                .main-temp{
+                    width: 100px;
+                    padding: 0 15px;
+                    display: flex;
+                    flex-wrap: wrap;
+        
+                    p{
+                        font-size: 35px;
+                        font-weight: 500;
+                        font-family: 'Raleway';
+                        padding: 0;
+                    }
+                }
+                .tn-temp{
+                    width: 50px;
+                    margin-top: 20px;
+                    text-align: center;
+                    
+                    p{
+                        font-weight: 500;
+                        font-size: 14px;
+
+                    }
+                }
+            }
+        
+        }
+    }
+}
+
+@media (min-width:767px) and (max-width:1440px){
+    .flags-card{
+        width: 100%;
+    }
+}
+
+@media (max-width:766.98px){
+    .flags-card{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: column-reverse;
+
+        .flags{
+            width: 100%;
+            flex-wrap: wrap;
+
+
+            .flags-leftbox{
+                width: 100%;
+                .flags-leftbox-links{
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+            .flags-rightbox{
+                width: 100%;
+                
+                .rightbox-mini-flag{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+        
+        .weather-bottom-class{
+            width: 100%;
+        }
+    }
+}

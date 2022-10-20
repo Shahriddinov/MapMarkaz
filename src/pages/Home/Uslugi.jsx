@@ -1,74 +1,95 @@
 import React, {useState, useEffect} from 'react'
 import './uslugi.scss'
-
-import vleft from '../../assets/images/VectorLeft.svg'
-import vright from '../../assets/images/VectorRight.svg'
-import cart2 from '../../assets/images/card_img2.svg'
-import cart3 from '../../assets/images/card_img3.svg'
-import cart4 from '../../assets/images/card_img4.svg'
-import cart5 from '../../assets/images/card_img5.svg'
+import cardImg2 from '../../assets/images/card_img2.svg'
+import cardImg3 from '../../assets/images/card_img3.svg'
+import cardImg4 from '../../assets/images/card_img4.svg'
+import cardImg5 from '../../assets/images/card_img5.svg'
+import { useTranslation } from 'react-i18next'
 import YanMap from 'components/YMap'
-import { useTranslation } from "react-i18next";
 import doGet from 'components/api/api'
 
 const Uslugi = () => {
-	const {t} = useTranslation();
 
-	const [serv, setServ] = useState([])
+	const {t, i18n} = useTranslation();
+	const [uslugi, setUslugi] = useState([])
 
-	async function getPosts(){
-        const res = await doGet('Services/')
-        setServ(res.data)
-    }
+	async function getUslugi(){
+		const res = await doGet('Services/')
+		setUslugi(res.data)
+	}
+	useEffect(()=>{
+		getUslugi()
+	},[])
 
-    useEffect(()=>{
-        getPosts()
-    },[])
 
   return (
-    <div className="uslugi">
-				<h1>{t("serves")}</h1>
+    <div className='uslugi'>
+        <div className="wh-title">{t('serves')}</div>
 
-				<div className="cards">
+        <div className="cards">
 
-					{serv.map((item)=>{
-						return(
-							<div className="card" key={item.id}>
-								<img src={item.img}/>
-								<p>{item.service_name}</p>
-							</div>
-						)
-					})}
-			
-					{/* <div className="card">
-						<YanMap/>
-						<p>{t("various")}</p>
-						<button className="btnLeft"><img src={vleft} /></button>
-						<button className="btnRight"><img src={vright} /></button>
-					</div>
+            {uslugi.map((item)=>{
+                return(
 
-					<div className="card">
-						<img src={cart2} />
-						<p>{t("model")}</p>
-					</div>
+                    <div className="card" key={item.id}>
+                        <div className="card-img">
+                            <img src={item.img} alt="" />
+                        </div>
+                        <div className="card-text">
+                            <span>{item.service_name}</span>
+                        </div>
+                    </div>
+                )
+            })
+            }
 
-					<div className="card">
-						<img src={cart3} />
-						<p>{t("journal")}</p>
-					</div>
+            {/* <div className="card">
+                <div className="card-img">
+                    <YanMap/>
+                </div>
+                <div className="card-text">
+                    <span>{t('various')}</span>
+                </div>
+            </div>
 
-					<div className="card">
-						<img src={cart4} />
-						<p>{t("logos")}</p>
-					</div>
+            <div className="card">
+                <div className="card-img">
+                    <img src={cardImg2} alt="" />
+                </div>
+                <div className="card-text">
+                    <span>{t('model')}</span>
+                </div>
+            </div>
 
-					<div className="card">
-						<img src={cart5} />
-						<p>{t("production")}</p>
-					</div> */}
-					
-				</div>
-			</div>
+            <div className="card">
+                <div className="card-img">
+                    <img src={cardImg3} alt="" />
+                </div>
+                <div className="card-text">
+                    <span>{t('journal')}</span>
+                </div>
+            </div>
+
+            <div className="card">
+                <div className="card-img">
+                    <img src={cardImg4} alt="" />
+                </div>
+                <div className="card-text">
+                    <span>{t('logos')}</span>
+                </div>
+            </div>
+
+            <div className="card">
+                <div className="card-img">
+                    <img src={cardImg5} alt="" />
+                </div>
+                <div className="card-text">
+                    <span>{t('production')}</span>
+                </div>
+            </div> */}
+
+        </div>
+    </div>
   )
 }
 

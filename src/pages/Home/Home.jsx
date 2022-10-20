@@ -1,23 +1,22 @@
 import React from "react";
 import "./home.scss";
-
-import Screen from "./Screen";
-import AboutUs from "./AboutUs";
-import Uslugi from "./Uslugi";
-import Pagination from "./Pagination";
-import Ads from "./Ads";
-
-
+import AboutUs from "./aboutUs";
+import Finance from "./finance";
+import Screen from "./screen";
+import Uslugi from "./uslugi";
+import Ads from "./ads";
+import Flags from './flags'
 
 const Home = () => {
 
 	return (
 		
-		<div className="Home">			
+		<div className="mainhome">			
 			<Screen/>
+            <Flags/>
 			<AboutUs/>
 			<Uslugi/>
-			<Pagination/>
+			<Finance/>
 			<Ads/>
 		</div>
 	);

@@ -5,10 +5,9 @@ import { useSelector } from "react-redux";
 import Logo from "../../../assets/images/Logo.svg"
 import { useWindowDimensions } from "hooks";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../Sidebar";
 import icon from '../../../assets/images/menu-icon.svg'
-import UzFlag from "../../../assets/images/Uz.png"
-import RuFlag from "../../../assets/images/ruFlag.png"
+import xicon from '../../../assets/images/75519.png'
+import Select from "./select";
 
 const Header = ({ speak, changeSpeakSwitcher }) => {
 	const { width } = useWindowDimensions();
@@ -28,7 +27,9 @@ const Header = ({ speak, changeSpeakSwitcher }) => {
 	function showSidebar(){
 		if(click == false){
 			sideB.current.style.display = 'none'
+			// alert('none')
 		}else{
+			// alert('block')
 			sideB.current.style.display = 'block'
 		}
 
@@ -55,12 +56,15 @@ const Header = ({ speak, changeSpeakSwitcher }) => {
 			<div className="navbar">
 				<div className="navLeft">
 					<div style={{display: "flex", alignItems: "center"}}>
-						<img style={{cursor: "pointer"}} src={Logo} className='logo' onClick={()=>navigate('/')}/>
+						<img style={{cursor: "pointer"}} src={Logo} onClick={()=>navigate('/')}/>
 						<div className="navTitle" onClick={()=>navigate('/')}>mapmarkaz.uz</div>
 					</div>
+        
+					<div className="select">
+						<Select/>
+					</div>
 
-					{/* <select> */}
-					<div className="options">
+					{/* <div className="options">
 						<button className="flagButton" onClick={() => handleChangeLng("uz")}>
 							<img className="iconFlag" src={UzFlag} alt=""/>
 							O'z
@@ -69,8 +73,7 @@ const Header = ({ speak, changeSpeakSwitcher }) => {
 							<img className="iconFlag" src={RuFlag} alt=""/>
 							Ру
 						</button>
-					</div>
-					{/* </select> */}
+					</div> */}
 				</div>
 				<div className="navRight">
 					<ul>
@@ -88,10 +91,17 @@ const Header = ({ speak, changeSpeakSwitcher }) => {
 					<img src={icon} onClick={showSidebar}/>
 				</div>
 
-				<div className="side_bar" ref={sideB}>
+				<div className="sidebar"  ref={sideB}>
+					<p className="x-btn" onClick={showSidebar}><img src={xicon} width={'20px'}/></p>
 
-					<Sidebar click={showSidebar}/>
+					<div className="sidebar-link">
+						<p onClick={()=>navigate('/')}>{t('basic')}</p>
+						<p onClick={()=>navigate('/aboutus')}>{t('weAbout')}</p>
+						<p onClick={()=>navigate('/contacts')}>{t('contact')}</p>
+						<p><Select/></p>
+					</div>
 				</div>
+
 
 			</div>
 		</>

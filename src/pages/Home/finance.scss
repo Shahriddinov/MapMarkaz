@@ -1,0 +1,160 @@
+@import '../global';
+
+
+.finance{
+    padding: 100px 50px;
+
+    .title{
+        @include title();
+    }
+
+    .pages{
+        margin-top: 50px;
+        width: 100%;
+        padding: 30px 10px;
+        background-color: white;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+
+        .pages-top{
+            display: flex;
+            align-items: center;
+
+            .select-wrapper{
+                display: block;
+                position: relative;
+                .p{
+                    padding: 0;
+                }
+    
+                    select{
+                        width: 150px;
+                        height: 50px;
+                        padding: 8px;
+                        border: none;
+                        background: rgba(0, 0, 0, 0.1);
+                        outline: none;
+                        text-align: center;
+                        font-weight: 500;
+                        // -webkit-appearance: none;
+                        // appearance: none;
+                    }
+                
+            }
+
+            .pages-btn{
+                display: flex;
+
+                .btn-div{
+                    display: block;
+                    margin-left: 10px;
+                    color: rgb(255, 255, 255);
+                    &:hover{
+                        color: grey;
+                    }
+
+                    &:focus{
+                        color: black;
+                    }
+                    
+
+                    button{
+                        padding: 5px;
+                        width: 85px;
+                        height: 50px;
+                        border: none;
+                        color: black;
+                        background-color: rgba(0, 0, 0, 0.1);
+                        &:hover{
+                            border: 1px solid rgb(0, 0, 0);
+                        }
+    
+                        &:focus{
+                            border: 1px solid black;
+                        }
+                    }
+
+                }
+
+            }
+
+            .search-btn{
+                margin: 50px 0 0 15px;
+                button{
+                    @include dark-btn();
+                    
+                    img{
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .pages-bottom{
+            display: flex;
+            flex-wrap: wrap;
+
+            .btn-down{
+                @include blue-btn();
+                margin-left: 10px;
+
+                img{
+                    margin-left: 10px;
+                    width: 20px;
+                }
+            }
+
+            .btn-see{
+                @include dark-btn();
+                margin-left: 10px;
+
+                img{
+                    margin-left: 10px;
+                    width: 20px;
+                }
+            }
+        }
+
+        
+    }
+}
+
+@media (max-width:767px){
+
+    .finance{
+        .pages{
+
+            .pages-top{
+                flex-wrap: wrap;
+                
+                .pages-btn{
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+            
+                    .btn-div{
+                        margin-left: 10px;
+            
+                        button{
+                            padding: 5px;
+                            width: 85px;
+                            height: 50px;
+                            border: none;
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+                    }
+            
+                }
+
+                .search-btn{
+                    width: 100%;
+
+                    button{
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,43 +5,23 @@
     display: block;
     backdrop-filter: blur(30px);
 
-    
-    @media (max-width:991px){
-        width: 100%;
-        // margin-left: -20px;
-        
-        .wrapper{
-            .earthImg{
-                width: 70%;
-            }
-        }
-    }
-
 
     .wrapper{
         width: 100%;
-        height: 75vh;
+        height: 550px;
         display: flex;
         align-items: center;
         justify-content: space-around;
 
-        .earthImg{
-            width: 80%;
-            height: 75%; 
-            background-image: url('../../../assets/images/earth.jpg');
-            background-size: cover;
-            border-radius: 50%;
-            position: relative;
-            animation: spin 10s linear 0s infinite;
+ 
+
+            img{
+                width: 75%;
+                height: 70%;
+            }
     
-        }
-            @keyframes spin {
-                from{}
-                to{background-position: -1000px 0;}
-                    
-                }
-    }
+        
+    }   
 
 
-    
 }
