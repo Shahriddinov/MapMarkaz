@@ -13,29 +13,37 @@ const Flags = () => {
   const {t, i18n} = useTranslation();
   const [location, setLocation] = useState('tashkent')
   const [data, setData] = useState([])
-  const [dt, setDt] = useState('')
+  const [dt, setDt] = useState([])
   const [hour, setHour] = useState('')
+  const [sunrise, setSunrise] = useState()
   const [minute, setMinute] = useState('')
 
   
   const weather_key = 'c7c30e148cab370ab65e14edb2d310cd'
-  
+   
+  var curr = new Date();
+  curr.setDate(curr.getDate());
+  var today = curr.toISOString().substring(0,10);
   
   useEffect(()=>{
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{
       setData(response.data)
-      setDt(response.data.dt)
-    
-
+      setDt(data.dt)
+      
+      
+      
       const cityTimeHour = new Date(dt*1000).getHours()
       const cityTimeMinute = new Date(dt*1000).getMinutes()
-
+      
       setHour(cityTimeHour)
       setMinute(cityTimeMinute)
-
+      
+      console.log('dt=',data.dt, 'time', hour,':',minute);
     })
+ 
     
   },[location])
+
 
   return (
     <div className='flags-card'>
@@ -91,7 +99,7 @@ const Flags = () => {
               )})}
             </select>
 
-            <input type="date" className='inp'/>
+            <input type="date" className='inp' defaultValue={today}/>
           </div>
 
           <div className="tepms">
@@ -103,7 +111,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p>{hour+1}:{minute}</p>
+              <p></p>
                {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -112,7 +120,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p>{hour+2}:{minute}</p>
+              <p></p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -120,7 +128,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-             <p>{hour+3}:{minute}</p>
+             <p></p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -128,7 +136,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p>{hour+4}:{minute}</p>
+              <p></p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -136,7 +144,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p>{hour+5}:{minute}</p>
+              <p></p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />

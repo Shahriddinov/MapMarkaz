@@ -21,7 +21,7 @@ export const cities = [
     },
     {
         id:5,
-        value:'karshi',
+        value:'qarshi',
         name:'Карши',
     },
     {
@@ -51,7 +51,7 @@ export const cities = [
     },
     {
         id:11,
-        value:'abu dahbi',
+        value:'abu dabi',
         name:'Абу-Даби',
     },
     {
@@ -207,8 +207,8 @@ export const cities = [
     },
     {
         id:42,
-        value:'beruni',
-        name:'Беруни',
+        value:'beruniy',
+        name:'Беруний',
     },
     {
         id:43,
@@ -243,7 +243,7 @@ export const cities = [
     {
         id:49,
         value:'Jerusalem',
-        name:'Иерусалим',
+        name:'Иерусалим Палестина',
     },
     {
         id:50,
@@ -357,7 +357,7 @@ export const cities = [
     },
     {
         id:72,
-        value:'tallin',
+        value:'tallinn',
         name:'Таллинн',
     },
     {
@@ -387,7 +387,7 @@ export const cities = [
     },
     {
         id:78,
-        value:'нamoussoukro',
+        value:'yamoussoukro',
         name:'Ямусукро',
     }
 ]

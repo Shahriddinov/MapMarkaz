@@ -1,6 +1,10 @@
 import Weather from 'components/Layout/Weather'
-import React from 'react'
+import React,{useState} from 'react'
 import './contacts.scss'
+import { useTranslation } from "react-i18next";
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import vPhone from '../../assets/images/Vector-phone.svg';
 import vEmail from '../../assets/images/vector-email.svg';
@@ -10,11 +14,35 @@ import tg from '../../assets/images/telegram.svg';
 import tt from '../../assets/images/tiktok.svg';
 import vk from '../../assets/images/vk.svg';
 import insta from '../../assets/images/instagram.svg';
-import { useTranslation } from "react-i18next";
 
 const Contacts = () => {
-
 	const {t, i18n} = useTranslation();
+
+
+    const [fullname, setFullname] = useState('')
+    const [number, setNumber] = useState('')
+    const [text, setText] = useState('')
+    
+    function postCont(e){
+        e.preventDefault()
+        try{
+            const res = axios.post('http://backend.mapmarkaz.uz/send_email/', {
+                name: fullname,
+                phone_number: number,
+                message: text,
+            });
+        } catch(error){
+            console.log(error);
+            toast(t('toastFalse'))
+
+        }
+        
+        setFullname('')
+        setNumber('')
+        setText('')
+        toast(t('toastTrue'))
+
+    }
 
   return (
     <div className='contacts'>
@@ -24,29 +52,32 @@ const Contacts = () => {
             <div className="contact-text">
                 {t('city')}
             </div>
+            <form onSubmit={postCont}>
 
             <div className="send-contacts">
                 <div className="send-fullname">
                     <p className='m-title'>{t('fullName')}</p>
-                    <input type="text" />
+                    <input value={fullname} onChange={(e)=>setFullname(e.target.value)} type="text" />
                 </div>
 
                 <div className="send-number">
                     <p className='m-title'>{t('phoneNumber')}</p>
-                    <input type="text" placeholder='+998 (_ _) _ _ _-_ _-_ _'/>
+                    <input value={number} onChange={(e)=>setNumber(e.target.value)} 
+                    type="text" placeholder='+998 (_ _) _ _ _-_ _-_ _'/>
                 </div>
 
                 <div className="send-text">
                     <p className='m-title'>{t('sms')}</p>
-                    <textarea name="" id=""></textarea>
+                    <textarea value={text} onChange={(e)=>setText(e.target.value)} name="" id=""></textarea>
                 </div>
 
                 <div className="send-btns">
-                    <button className='btn-send'>{t('sends')}</button>
-                    <button className='btn-call'>{t('setTel')}</button>
+                    <button type='submit' className='btn-send'>{t('sends')}</button>
+                    <input type='tel' value={t('setTel')} className='btn-call'/>
                     
                 </div>
             </div> 
+            </form>
         </div>
 
         <div className="contact-right">
@@ -107,6 +138,7 @@ const Contacts = () => {
                 </div>
             </div>
         </div>
+        <ToastContainer/>
     </div>
   )
 }
