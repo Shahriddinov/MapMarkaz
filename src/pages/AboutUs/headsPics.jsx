@@ -25,8 +25,8 @@ const HeadsPics = () => {
     const [aboutUs, setAboutUs] = useState([])
   
     async function getPosts(){
-      const abus = await doGet('AboutUsMore/')
-      setAboutUs(abus.data)
+      const res = await doGet('AboutUsMore/')
+      setAboutUs(res.data)
     }
   
     useEffect(()=>{
@@ -37,7 +37,7 @@ const HeadsPics = () => {
     <div className='headsPics'>
         <div className="headsPics-top">
         <div className="title">{aboutUs[0]?.header}</div>
-        <img src={sloy} />
+        <img src={aboutUs[0]?.img1}/>
     </div>
 
         {/* {
@@ -57,32 +57,32 @@ const HeadsPics = () => {
                 <div  className="headsPics-map">
                     <div className="title">{aboutUs[1]?.header}</div>
                     <div>
-                        <img src={sloy1} />
-                        <img src={sloy2} />
+                        <img src={aboutUs[1]?.img1} />
+                        <img src={aboutUs[1]?.img2} />
                     </div>
                 </div>
 
                 <div  className="headsPics-map">
                     <div className="title">{aboutUs[2]?.header}</div>
                     <div>
-                        <img src={sloy3} />
-                        <img src={sloy4} />
+                        <img src={aboutUs[2]?.img1} />
+                        <img src={aboutUs[2]?.img2} />
                     </div>
                 </div>
 
                 <div className="headsPics-map">
                     <div className="title">{aboutUs[3]?.header}</div>
                     <div>
-                        <img src={sloy5} />
-                        <img src={sloy6} />
+                        <img src={aboutUs[3]?.img1} />
+                        <img src={aboutUs[3]?.img2} />
                     </div>
                 </div>
 
                 <div className="headsPics-map">
                     <div className="title">{aboutUs[4]?.header}</div>
                     <div>
-                        <img src={sloy7} />
-                        <img src={sloy8} />
+                        <img src={aboutUs[4]?.img1} />
+                        <img src={aboutUs[4]?.img2} />
                     </div>
                 </div>
                 
@@ -91,8 +91,8 @@ const HeadsPics = () => {
                     <div className="title">{aboutUs[5]?.header}</div>
                     <span className='.gr-text'>{t('result')}</span>
                     <div>
-                        <img src={sloy9} />
-                        <img src={sloy10} />
+                        <img src={aboutUs[5]?.img1} />
+                        <img src={aboutUs[5]?.img2} />
                     </div>
                 </div>
             </div>

@@ -24,13 +24,12 @@ const HistoryMapmarkaz = () => {
   const {t, i18n} = useTranslation();
 
   const [post, setPost] = useState([])
-  const [aboutUs, setAboutUs] = useState([])
 
   async function getPosts(){
     const res = await doGet('History/')
-    const abus = await doGet('AboutUsMore/')
     setPost(res.data)
-    setAboutUs(abus.data)
+
+    console.log(post);
   }
 
   useEffect(()=>{
@@ -42,8 +41,8 @@ const HistoryMapmarkaz = () => {
         <div className="history-mapmarkaz">
             <div className="hm-box">
                 <div className="hm-box-left">
-                    <img src={vLogo1} />
-                    <img src={vLogo2} />
+                    <img src={post[0]?.img1} />
+                    <img src={post[1]?.img1} />
                 </div>
 
                 <div className="hm-box-right">

@@ -282,7 +282,7 @@ export const cities = [
     },
     {
         id:57,
-        value:'kuala-lumpur',
+        value:'kuala lumpur',
         name:'Куала-Лумпур',
     },
     {

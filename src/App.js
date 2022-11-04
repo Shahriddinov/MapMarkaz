@@ -6,14 +6,14 @@ import systemActions from "store/actions/system";
 import config from "config";
 import { helpers } from "services";
 import { withRouter } from "utils";
-import ReactGa from 'react-ga'
+// import ReactGa from 'react-ga'
 
 function App({ children }) {
 	const dispatch = useDispatch();
 
 	const setLanguage = () => {
 		const pathname = window.location.pathname;
-		const locationLang = pathname.split("/")[1];
+		const locationLang = pathname.split("/")[0];
 
 		if (helpers.isEnableLang(locationLang)) {
 			i18next.changeLanguage(locationLang);
@@ -30,8 +30,8 @@ function App({ children }) {
 		dispatch(systemActions.GetSettings());
 		//eslint-disable-next-line
 
-		ReactGa.initialize('G-7ZQCMTTC8Z')
-		ReactGa.pageview('/')
+		// ReactGa.initialize('G-7ZQCMTTC8Z')
+		// ReactGa.pageview('/')
 	}, []);
 
 	return (

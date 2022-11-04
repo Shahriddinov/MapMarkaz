@@ -14,6 +14,7 @@ const AboutUs = () => {
     async function getText(){
         const res = await doGet('AboutUs/')
         setTexts(res.data)
+        console.log();
     }
     useEffect(()=>{
         getText()
@@ -27,8 +28,8 @@ const AboutUs = () => {
             </div>
             <div className="post-text">
                 <div className='title'>{t('weAbout')}</div>
+                <p>{texts[0]?.text}</p>
                 <p>{texts[1]?.text}</p>
-                <p>{texts[2]?.text}</p>
             </div>
         </div>
 
@@ -37,8 +38,8 @@ const AboutUs = () => {
                 <img src={postImg2} alt="" />
             </div>
             <div className="post-text">
+                <p>{texts[2]?.text}</p>
                 <p>{texts[3]?.text}</p>
-                <p>{texts[4]?.text}</p>
             </div>
         </div>
 
@@ -47,7 +48,7 @@ const AboutUs = () => {
                 <img src={postImg3} alt="" />
             </div>
             <div className="post-text">
-                <p>{texts[5]?.text}</p>
+                <p>{texts[4]?.text}</p>
                 
             </div>
         </div>

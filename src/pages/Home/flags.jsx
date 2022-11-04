@@ -1,5 +1,4 @@
 import React from 'react'
-import mflag from '../../assets/images/mini_flag.svg'
 import './flags.scss'
 import { cities } from '../../components/Layout/Weather/cities'
 import { useTranslation } from "react-i18next";
@@ -14,33 +13,65 @@ const Flags = () => {
   const [location, setLocation] = useState('tashkent')
   const [data, setData] = useState([])
   const [dt, setDt] = useState([])
+  const [lats, setLats] = useState()
+  const [lons, setLons] = useState()
   const [hour, setHour] = useState('')
-  const [sunrise, setSunrise] = useState()
-  const [minute, setMinute] = useState('')
 
-  
+  const [oneVisitor, setOneVisitor] = useState('')
+  const [allTimeVisits, setAllTimeVisits] = useState('')
+  const [allTimeVisitors, setAllTimeVisitors] = useState([])
+
+  const [daily, setDaily] = useState([])
+  const [sDaily, setSDaily] = useState()
+
+
+
   const weather_key = 'c7c30e148cab370ab65e14edb2d310cd'
-   
-  var curr = new Date();
+  
+  // calendar default value
+  let curr = new Date();
   curr.setDate(curr.getDate());
-  var today = curr.toISOString().substring(0,10);
+  let today = curr.toISOString().substring(0,10);
+
+
+
+  function getVisitors(){
+    let oneDayVisitor = localStorage.getItem('_ym_wv2rf:90960684:0')
+    let allTime = localStorage.getItem('_ym90960684:0_reqNum')
+
+    setOneVisitor(oneDayVisitor)
+    setAllTimeVisits(allTime)
+    setAllTimeVisitors(allTime)
+
+  }
+
+  const getThatDay=(e)=>{
+    
+    axios.get(`https://api.openweathermap.org/data/2.5/onecall?lon=${lons}&lat=${lats}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{
+      setDaily(response.data)
+    })
+    setSDaily(e.target.value)
+    console.log("s",daily, "d", sDaily);
+
+
+  }
+  
   
   useEffect(()=>{
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{
+
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lon=${lons}&lat=${lats}&q=${location}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{  
       setData(response.data)
-      setDt(data.dt)
-      
-      
-      
-      const cityTimeHour = new Date(dt*1000).getHours()
-      const cityTimeMinute = new Date(dt*1000).getMinutes()
-      
+      setDt(response.data.dt)
+      setLons(response.data.coord.lon)
+      setLats(response.data.coord.lat)
+
+      let cityTimeHour = new Date().getHours()
+
       setHour(cityTimeHour)
-      setMinute(cityTimeMinute)
-      
-      console.log('dt=',data.dt, 'time', hour,':',minute);
+
     })
- 
+    
+    getVisitors()
     
   },[location])
 
@@ -59,32 +90,10 @@ const Flags = () => {
                </div>
 
            <div className="flags-rightbox">
-                <div>{t('siteVisit')}</div>
+                <div>{t('siteVisitDay')} {oneVisitor}  {t('siteVisitAllTime')} {allTimeVisits}</div>
                 <div className='rightbox-mini-flag'>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>
-                    <p> <img src={mflag}/> 5 </p>   
+
+
                 </div>
             </div>
 
@@ -99,7 +108,13 @@ const Flags = () => {
               )})}
             </select>
 
-            <input type="date" className='inp' defaultValue={today}/>
+             <input type={'date'} defaultValue={today} className='inp' onChange={getThatDay}/>
+
+            {/* <select className='inp' onChange={getThatDay}>
+              <option value="b">today</option>
+              <option value="e">tomorrow</option>
+
+            </select> */}
           </div>
 
           <div className="tepms">
@@ -111,7 +126,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p></p>
+              <p>{hour+1}:00</p>
                {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -120,7 +135,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p></p>
+              <p>{hour+2}:00</p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -128,7 +143,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-             <p></p>
+             <p>{hour+3}:00</p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -136,7 +151,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p></p>
+              <p>{hour+4}:00</p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />
@@ -144,7 +159,7 @@ const Flags = () => {
             </div>
 
             <div className="tn-temp">
-              <p></p>
+              <p>{hour+5}:00</p>
               {data.weather ? <img src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}/> : null}
               <br />
               <br />

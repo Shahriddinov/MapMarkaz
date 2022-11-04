@@ -137,6 +137,7 @@
         display: flex;
         flex-wrap: wrap;
         flex-flow: column-reverse;
+        justify-content: center;
 
         .flags{
             width: 100%;
@@ -144,14 +145,14 @@
 
 
             .flags-leftbox{
-                width: 100%;
+                width: 90%;
                 .flags-leftbox-links{
                     display: flex;
                     justify-content: space-around;
                 }
             }
             .flags-rightbox{
-                width: 100%;
+                width: 90%;
                 
                 .rightbox-mini-flag{
                     display: flex;
