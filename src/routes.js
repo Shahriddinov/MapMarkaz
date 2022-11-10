@@ -21,7 +21,7 @@ const routes = [
 ];
 
 	const RoutesContainer = () => (
-	<Router {...{ history }} basename={`/${getBaseName()}`}>
+	<Router {...{ history }}>
 
 			<Layout>
 				<Suspense fallback={<Spinner position="full" />}>

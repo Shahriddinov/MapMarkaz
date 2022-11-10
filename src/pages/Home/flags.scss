@@ -29,6 +29,7 @@
             width: 60%;
 
             .rightbox-mini-flag{
+                margin-top: 20px;
                 display: flex;
                 flex-wrap: wrap;
 
@@ -57,7 +58,7 @@
                 display: flex;
                 justify-content: space-around;
         
-                select{
+                .selectMap{
                     background-color: transparent;
                     color: white;
                     font-family: 'Montserrat';
@@ -85,6 +86,15 @@
                     text-align: left;
                     padding: 10px 20px;
                     width: 150px;
+                }
+
+                .selectDay{
+                    color: white;
+                    font-size: 15px;
+                    width: 140px;
+                    border: 1px solid white;
+                    text-align: center;
+                    padding: 0 10px;
                 }
             }
         

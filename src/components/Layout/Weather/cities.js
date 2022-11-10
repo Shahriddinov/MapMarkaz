@@ -61,7 +61,7 @@ export const cities = [
     },
     {
         id:13,
-        value:'bishkek',
+        value:'algiers',
         name:'Алжир',
     },
     {

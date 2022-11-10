@@ -6,6 +6,7 @@ import phone from '../../../assets/images/phone_icon.svg'
 import loc from '../../../assets/images/location.svg'
 import up from '../../../assets/images/upbt.png'
 import email from '../../../assets/images/Email.svg'
+import foo_logo from '../../../assets/images/foo-logo.png'
 import doGet from '../../api/api'
 
 const Footer = () => {
@@ -73,7 +74,7 @@ const Footer = () => {
 					<button onClick={scrollTop} id='myBtn'><img src={up} /></button>
 				
 
-					<p style={{float:'right'}}>Developer by Napa</p>
+					<img src={foo_logo} style={{float:'right', width:'60px'}}/>
 				
 			</div>
 

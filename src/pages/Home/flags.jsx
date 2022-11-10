@@ -14,8 +14,12 @@ const Flags = () => {
   const [data, setData] = useState([])
   const [dt, setDt] = useState([])
   const [lats, setLats] = useState()
+  const [temp, setTemp] = useState()
   const [lons, setLons] = useState()
   const [hour, setHour] = useState('')
+  const [desc, setDesc] = useState('')
+  const [feelLike, setFeelLike] = useState()
+  const [humadity, setHumadity] = useState()
 
   const [oneVisitor, setOneVisitor] = useState('')
   const [allTimeVisits, setAllTimeVisits] = useState('')
@@ -30,8 +34,13 @@ const Flags = () => {
   
   // calendar default value
   let curr = new Date();
+  let curr2 = new Date()
   curr.setDate(curr.getDate());
   let today = curr.toISOString().substring(0,10);
+
+  let day = curr2.getDate()
+  let month = curr2.getMonth()+1
+  let year = curr2.getFullYear()
 
 
 
@@ -47,13 +56,35 @@ const Flags = () => {
 
   const getThatDay=(e)=>{
     
+    setSDaily(e.target.value)
+    console.log(sDaily);
     axios.get(`https://api.openweathermap.org/data/2.5/onecall?lon=${lons}&lat=${lats}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{
       setDaily(response.data)
+
+      switch (sDaily) {
+        case "0" : setTemp(daily.current.temp)
+          break;
+      
+        case "1" : setTemp(daily.hourly[1].temp)
+          break;
+
+        case "2" : setTemp(daily.hourly[2].temp)
+          break;
+
+        case "3" : setTemp(daily.hourly[3].temp)
+          break;
+
+        case "4" : setTemp(daily.hourly[4].temp)
+          break;
+
+        case "5" : setTemp(daily.hourly[5].temp)
+          break;
+
+        case "6" : setTemp(daily.hourly[6].temp)
+          break;
+      }
     })
-    setSDaily(e.target.value)
-    console.log("s",daily, "d", sDaily);
-
-
+    
   }
   
   
@@ -62,9 +93,12 @@ const Flags = () => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lon=${lons}&lat=${lats}&q=${location}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{  
       setData(response.data)
       setDt(response.data.dt)
+      setDesc(response.data.weather[0].description)
+      setFeelLike(response.data.main.feels_like)
+      setHumadity(response.data.main.humidity)
       setLons(response.data.coord.lon)
       setLats(response.data.coord.lat)
-
+      setTemp(response.data.main.temp)
       let cityTimeHour = new Date().getHours()
 
       setHour(cityTimeHour)
@@ -91,8 +125,14 @@ const Flags = () => {
 
            <div className="flags-rightbox">
                 <div>{t('siteVisitDay')} {oneVisitor}  {t('siteVisitAllTime')} {allTimeVisits}</div>
+
                 <div className='rightbox-mini-flag'>
 
+                  <noindex>
+                    <a href="https://info.flagcounter.com/8vsx">
+                      <img src="https://s01.flagcounter.com/count2/8vsx/bg_FFFFFF/txt_000000/border_FFFFFF/columns_5/maxflags_12/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/>
+                    </a>
+                  </noindex>
 
                 </div>
             </div>
@@ -102,25 +142,31 @@ const Flags = () => {
         <div className="weather-bottom-class">
         <div className="wea-bottom">
           <div className="wea-inputs">
-            <select onChange={(e)=>setLocation(e.target.value)}>
+            <select className='selectMap' onChange={(e)=>setLocation(e.target.value)}>
               {cities.map((item)=>{return(
                 <option key={item.id} value={item.value}> {item.name}</option>
               )})}
             </select>
 
-             <input type={'date'} defaultValue={today} className='inp' onChange={getThatDay}/>
+             {/* <input type={'date'} defaultValue={today} className='inp' onChange={getThatDay}/> */}
 
-            {/* <select className='inp' onChange={getThatDay}>
-              <option value="b">today</option>
-              <option value="e">tomorrow</option>
+            <select className='selectDay' defaultValue={"0"} onChange={getThatDay}>
+              <option value="0">{today}</option>
+              <option value="1">{year}-{month}-{day+1}</option>
+              <option value="2">{year}-{month}-{day+2}</option>
+              <option value="3">{year}-{month}-{day+3}</option>
+              <option value="4">{year}-{month}-{day+4}</option>
+              <option value="5">{year}-{month}-{day+5}</option>
+              <option value="6">{year}-{month}-{day+6}</option>
 
-            </select> */}
+            </select>
           </div>
 
           <div className="tepms">
             <div className="main-temp">
-              {data.main ? <p>{data.main.temp}°</p> : null}
-              {data.weather ? <span>{data.weather[0].description}</span> : null}
+              {/* {data.main ? <p>{data.main.temp}°</p> : null} */}
+              <p>{temp}°</p>
+              <span>{desc}</span> 
               <br />
               {data.weather ? <span>{data.main.feels_like}°, {data.main.humidity}°</span> : null}
             </div>
