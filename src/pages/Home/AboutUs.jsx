@@ -1,84 +1,58 @@
-import React, { useState } from 'react'
+import React, {useState, useEffect} from 'react'
+import postImg1 from '../../assets/images/rect1.svg'
+import postImg2 from '../../assets/images/rect2.svg'
+import postImg3 from '../../assets/images/rect3.svg'
 import './aboutUs.scss'
-import firstImg from '../../assets/images/firstImg.svg'
-import sectImg from '../../assets/images/secImg.svg'
-import thirdImg from '../../assets/images/thirdImg.svg'
-import { useEffect } from 'react'
 import { useTranslation } from "react-i18next";
 import doGet from 'components/api/api'
 
-
-
-
-
 const AboutUs = () => {
-	const {t} = useTranslation();
+	const {t, i18n} = useTranslation();
 
-	const r = '>'
+    const [texts, setTexts] = useState([])
 
-	const [text, setText] = useState([])
-
-	// 	async function getAboutUs(){
-	// 		const res = await doGet('AboutUs/')
-	// 		setText(res.data[0])
-	// 	}
-	// useEffect(()=>{
-	// 	getAboutUs()
-	// },[])
-
-	// console.log('aboutUs', text);
+    async function getText(){
+        const res = await doGet('AboutUs/')
+        setTexts(res.data)
+        console.log();
+    }
+    useEffect(()=>{
+        getText()
+    },[])
 
   return (
-    <div className="aboutUs">
-				<div className="first">
-					<div className="img">
-						<img src={firstImg} width='100%'/>
-					</div>
+    <div className='aboutUs'>
+        <div className="first-post">
+            <div className="post-img">
+                <img src={postImg1} alt="" />
+            </div>
+            <div className="post-text">
+                <div className='title'>{t('weAbout')}</div>
+                <p>{texts[0]?.text}</p>
+                <p>{texts[1]?.text}</p>
+            </div>
+        </div>
 
-					<div className="text">
-						<p className="fp">{t("weAbout")}</p>
+        <div className="second-post">
+            <div className="post-img">
+                <img src={postImg2} alt="" />
+            </div>
+            <div className="post-text">
+                <p>{texts[2]?.text}</p>
+                <p>{texts[3]?.text}</p>
+            </div>
+        </div>
 
-						<p className="sp">
-							{t("info")}
-					    <br />
-					    <br />
-							{t("performs")}
-						</p>
-					</div>
-
-				</div>
-
-				<div className="second">
-					<div className="img">
-						<img src={sectImg} width='100%'/>
-					</div>
-
-					<div className="text">
-						<p className="sp">
-							{t("history")}
-							<br />
-							<br />
-							{t("years")}
-						</p>
-					</div>
-
-				</div>
-
-				<div className="third">
-					<div className="img">
-						<img src={thirdImg} width='100%'/>
-					</div>
-
-					<div className="text">
-
-						<p className="sp">
-							{t("card")}
-						</p>
-					<button>{t("more")} {r} </button>
-					</div>
-
-				</div>
-			</div>
+        <div className="third-post">
+            <div className="post-img">
+                <img src={postImg3} alt="" />
+            </div>
+            <div className="post-text">
+                <p>{texts[4]?.text}</p>
+                
+            </div>
+        </div>
+    </div>
   )
 }
 

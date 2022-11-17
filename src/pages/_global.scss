@@ -1,0 +1,83 @@
+@mixin gb_btn{
+    background: rgba(29, 113, 184, 1);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    box-shadow: 0px 13.434px 39.1824px rgba(21, 76, 238, 0.21);
+    cursor: pointer;
+}
+
+@mixin title{
+    font-family: 'Montserrat';
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 61px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #191E29;
+
+    @media (max-width: 575.98px){
+        font-size: 25px;
+    }
+
+    @media (min-width:576px) and (max-width: 992px){
+        font-size: 35px;
+    }
+}
+
+
+@mixin dark-text{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    text-indent: 30px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #191E29;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    
+    @media (max-width:992px){
+        font-size: 16px;
+    }
+}
+
+@mixin grey-text{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    color: #6F6F6F;
+    
+    @media (max-width:992px){
+        font-size: 16px;
+    }
+}
+
+@mixin dark-btn{
+    background: rgba(25, 30, 41, 1);
+    padding: 14px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+}
+@mixin blue-btn{
+    background: rgba(29, 113, 184, 1);
+    padding: 14px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+}

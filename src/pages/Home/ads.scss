@@ -1,39 +1,62 @@
-@import './global';
+@import '../global';
+
+
 .ads{
-    width: 94%;
-    padding: 50px 0;
+    padding: 100px 50px;
 
     .title{
-      @include title();
+        @include title();
     }
-    .box{
-      background-color: #ffffff;
-      padding: 20px 5px;
-      margin-bottom: 10px;
 
-      .top{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .ads-card{
+        margin-top: 50px;
+        padding: 30px;
+        background-color: white;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+        
+        .card-top{
+            display: flex;
+            justify-content: space-between;
 
-        p{
-          margin-left: 15px;
-          font-family: 'Raleway';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 25px;
-          color: #1A212C;
-
+            p{
+                font-family: 'Raleway';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 120%;
+                color: #1A212C;
+            }
         }
 
-        img{
-          margin-right: 15px;
+        .card-bottom{
+            display: flex;
+            flex-wrap: wrap;
+
+            .card-btn-down{
+                @include blue-btn();
+
+                img{
+                    margin-left: 10px;
+                    width: 20px;
+                }
+
+            }
+            .card-btn-see{
+                @include dark-btn();
+                margin-left: 10px;
+
+                @media (max-width:450px) {
+                     margin-top: 5px;
+                    
+                }
+
+                img{
+                    margin-left: 10px;
+                    width: 20px;
+                }
+
+            }
         }
-      }
-      .bottom{
-        display: flex;
-        justify-content: start;
-      }
     }
-  }
-  
+}

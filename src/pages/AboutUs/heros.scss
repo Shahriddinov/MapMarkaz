@@ -1,0 +1,32 @@
+@import '../global';
+
+
+.heros{
+    width: 90%;
+    padding: 100px 50px;
+
+    .title{
+        @include title();
+        margin-bottom: 30px;
+    }
+
+    .hero-map{
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+
+        img{
+            width: 32%;
+        }
+    }
+}
+
+@media (max-width:767px){
+    .heros{
+        .hero-map{
+            img{
+                width: 87%;
+            }
+        }
+    }
+}

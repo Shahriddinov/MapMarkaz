@@ -1,183 +1,219 @@
-@import './global';
+@import '../global';
 
 .aboutUs{
-    padding: 200px 10px 20px 0;
-    height: 1200px;
-    width: 99%;
-    overflow-x: hidden;
-    .first{
-      width: 95%;
-      display: flex;
-      position: absolute;
-      .img{
-        width: 50%;
+    width: 1440px;
+    padding: 100px 50px;
 
-      }
-      .text{
-        width: 47%;
-        align-items: center;
-
-        .fp{
-           @include title();
-        }
-
-        .sp{
-          @include text();
-          text-align: justify;
-          text-indent: 30px;
-       }
-      }
-    }
-
-    .second{
-      margin: 350px 0 0 235px;
-      display: flex;
-      width: 75%;
-      position: absolute;
-      float: right;
-      justify-content: space-around;
-
-      .img{
-        width: 50%;
-
-      }
-      .text{
-        width: 50%;
-        align-items: center;
-  
-  
-        .sp{
-          @include text();
-          text-align: justify;
-          text-indent: 30px;
-       }
-      }
-    }
-
-    .third{
-
-      margin-top: 650px;
-      display: flex;
-      justify-content: space-around;
-      position: absolute;
-      align-items: center;
-      .img{
-        width: 40%;
-
-      }
-      .text{
-
-        width: 52%;
-        align-items: center;
+    .first-post{
         display: flex;
-        flex-wrap: wrap;
-  
-        .sp{
-          @include text();
-          text-align: justify;
-          text-indent: 30px;
 
-       }
-       button{
-        font-family: 'Montserrat';
-        font-weight: 500;
-        font-size: 20px;
+        .post-img{
+            width: 50%;
+            img{
+                width: 100%;
+            }
+        }
+        .post-text{
+            width: 50%;
+            padding-top: 50px;
+
+            .title{
+                @include title();
+            }
+
+            p{
+                @include dark-text();
+            }
+        }
+
+    }
+
+    .second-post{
         display: flex;
-        align-items: center;
-        background-color: transparent;
-        cursor: pointer;
-        color: #1D71B8;
-        border: none;
-        float: right;
-         
-       }
-      }
+        padding-left: 250px;
+        margin-top: -120px;
+
+        .post-img{
+            width: 50%;
+            img{
+                width: 100%;
+            }
+        }
+        .post-text{
+            width: 50%;
+            padding-left: 40px;
+
+            p{
+                @include dark-text();
+            }
+        }
+
     }
-  }
 
-@media (max-width:991px){
-  .aboutUs{
-    display: block;
-    .first{
-      position: relative;
-      display: block;
-      .img{
-        width: 100%;
-        img{
-          transform: rotate(10deg);
-        }
-      }
-      .text{
-        width: 100%;
+    .third-post{
+        display: flex;
+        margin-top: -90px;
 
-        .fp{
-          text-align: center;
+        .post-img{
+            width: 40%;
+            img{
+                width: 100%;
+            }
         }
-        .sp{
-          font-size: 14px;
+        .post-text{
+            width: 100%;
+            padding-top: 80px;
+            width: 60%;
+            padding-left: 40px;
+ 
+            p{
+                @include dark-text();
+            }
         }
-      }
+
     }
-    .second{
-      margin-top: 0;
-      position: relative;
-      width: 100%;
-      .img{
-        display: none;
-      }
-
-      .text{
-        width: 100%;
-        .sp{
-          font-size: 14px;
-        }
-      }
-    }
-    .third{
-      width: 100%;
-      margin-top: -30px;
-      position: relative;
-      .img{
-        display: none;
-      }
-
-      .text{
-        width: 100%;
-        .sp{
-          font-size: 14px;
-        }
-      }
-    }
-  }
-
 }
 
-@media (min-width:991px) and (max-width:1198px){
+@media (min-width: 1100px) and (max-width: 1440px){
     .aboutUs{
-      .first{
-        .text{
-          .sp{
-            font-size: 14px;
-          }
-        }
-      }
-      .second{
-        margin-top: 300px;
-        .text{
-          .sp{
-            font-size: 14px;
-          }
-        }
-      }
-      .third{
-        margin-top: 550px;
-        .text{
-          .sp{
-            font-size: 14px;
-          }
-        }
-      }
+        width: 90%;
     }
-  
+}
+@media (min-width: 993px) and (max-width: 1099.98px){
+    .aboutUs{
+        width: 85%;
+
+        .first-post{
+            display: flex;
+    
+            .post-img{
+                width: 50%;
+                img{
+                    width: 100%;
+                }
+            }
+            .post-text{
+                width: 50%;
+                padding-top: 50px;
+               
+    
+                .title{
+                    @include title();
+                }
+    
+                p{
+                    @include dark-text();
+                }
+            }
+    
+        }
+    
+        .second-post{
+            display: flex;
+            padding-top: 0;
+            padding-left: 0;
+            margin-top: 0;
+            .post-img{
+                width: 50%;
+                img{
+                    width: 100%;
+                }
+            }
+            .post-text{
+                width: 50%;
+    
+                p{
+                    @include dark-text();
+                }
+            }
+    
+        }
+    
+        .third-post{
+            display: flex;
+    
+            .post-img{
+                width: 50%;
+                img{
+                    width: 100%;
+                }
+            }
+            .post-text{
+                width: 100%;
+                padding-top: 80px;
+                width: 50%;
+                padding-left: 40px;
+     
+                p{
+                    @include dark-text();
+                }
+            }
+    
+        }
+        
+    }
 }
 
+@media (max-width: 992px){
+    .aboutUs{
+        width: 80%;
+
+        .first-post{
+            display: block;
+            width: 100%;
+
+            .post-img{
+                width: 100%;
+                
+                
+                img{
+                    transform: rotate(10deg);
+                }
+
+            }
+            .post-text{
+                width: 100%;
+                .title{
+                    text-align: center;
+                }
+
+            }
+        }
+
+        .second-post{
+            display: block;
+            padding-left: 0;
+            margin-top: 0;
+
+            .post-img{
+                display: none;
+            }
+            .post-text{
+                width: 100%;
+                padding-left: 0;
+                padding-top: 0;
+
+            }
+        }
+
+        .third-post{
+            display: block;
+            margin-top: 0;
+
+            .post-img{
+                display: none;
+            }
+
+            .post-text{
+                width: 100%;
+                padding-left: 0;
+                padding-top: 0;
+
+                p{
+                    
+                }
+
+            }
+        }
+    }
+}

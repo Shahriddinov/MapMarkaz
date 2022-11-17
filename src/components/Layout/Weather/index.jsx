@@ -1,14 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './weather.scss'
+import earth from "../../../assets/images/earth-gif.gif"
 
 const Weather = () => {
    
+  const [city, setCity] = useState([])
   return (
     <div className='main'>
         <div className="wrapper">
-
-            <div className='earthImg'></div>
+          
+              <img src={earth}/>
+            
         </div>
+
+        
 
     </div>
   )

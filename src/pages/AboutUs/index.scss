@@ -1,142 +1,78 @@
-@import '../Home/global';
+@import '../global';
 
 .aboutUsMore{
-    width: 96.3%;
-    padding-left: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    
-    .mainDiv{
-        width: 100%;
-        height: 200px;
+    // width: 1440px;
+    overflow-y: hidden;
+
+
+    .aboutUsMore-top{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        width: 100%;
+        height: 220px;
+        background-color: white;
+        margin-top: -100px;
         overflow: hidden;
-        .left{
-            width: 66%;
-            padding-top: 20px;
-            // background-color: #ffffff;
-            // border: 1px solid red;
-    
-            p{
-                @include title;    
-                margin-top: 0;                    
+        padding-top: 85px;
+
+        .aboutUsMore-left{
+            width: 864px;
+            margin-left: 50px;
+
+            .title{
+                margin-top: 50px;
+                @include title();
             }
         }
-        .right{
-            width: 34%;
+
+
+        .aboutUsMore-right{
+            width: 519px;
         }
-    }
-
-    .box{
-        margin-top: 80px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        .images{
-            width: 40%;
-            display: flex;
-            flex-wrap: wrap;
-            overflow: hidden;
-        }
-        .text{
-            width: 53%;
-            
-            h3{ 
-                @include title;    
-                margin: 0;  
-                
-            }
-            p{
-                @include text;
-                margin: 0;
-            }
-        }
-    }
-    .content{
-        width: 100%;
-        padding: 25px 0;
-
-    }
-
-    .imgPosts{
-        width: 100%;
-        padding: 25px 0;
-
-    }
-    .bottom{
-        width: 100%;
-        padding: 25px 0;
     }
 }
 
-@media (max-width:767px){
-    .aboutUsMore{
-        padding-left: 20px;
-        .mainDiv{
-            
-           .left{
-            width: 56%;
-           }
-           .right{
-            display: none;
-           }
-        }
+@media (min-width:1200px) and (max-width:1440px){
 
-        .box{
-            display: block;
-            .images{
+}
+
+
+@media (min-width:992px) and (max-width:1199px){
+    .aboutUsMore{
+        width: 100%;
+
+        .aboutUsMore-top{
+            height: 200px;
+
+            .aboutUsMore-left{
+                width: 864px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+    .aboutUsMore{
+        width: 100%;
+
+        .aboutUsMore-top{
+            height: 200px;
+        }
+    }
+}
+
+@media (max-width: 767.98px){
+    .aboutUsMore{
+        width: 100%;
+
+        .aboutUsMore-top{
+            height: 200px;
+
+            .aboutUsMore-left{
                 width: 100%;
-
-                img{
-                    width: 50%;
-                }
             }
-
-            .text{
-
-                width: 100%;
-
-                p{
-                    width: 100%;
-                }
+            .aboutUsMore-right{
+                display: none;
             }
-        }
-    }
-}
-
-
-@media (min-width:767px) and (max-width:991px){
-    .aboutUsMore{
-        padding-left: 20px;
-
-        .mainDiv{
-           .left{
-            width: 60%;
-            p{
-                text-align: center;
-            }
-            
-        }
-        .right{
-            display: none;
-        }
-        
-        }
-        .box{
-            margin-top: 0;
-        }
-    }
-}
-
-@media (min-width:991px) and (max-width:1336px){
-    .aboutUsMore{
-        .mainDiv{
-           .left{
-            width: 66%;
-           }
         }
     }
 }

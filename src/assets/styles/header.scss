@@ -1,19 +1,19 @@
 .navbar {
   display: flex;
-  width: 96.3%;
-  padding-left: 50px;
-  //margin-top: 20px;
-  // border: 1px solid black;
-
+  width: 1440px;
+  max-width: 1440px;
+  font-family: 'Montserrat';
+  // border: 1px solid red;
+  // border-right: 20px solid #0B0E14;
   
   .navLeft {
-    width: 69.2%;
+    width: 59.7%;
+    // max-width: 61%;
     display: flex;
-    align-items: center;
-    margin-top: 20px;
+    padding:20px 15px 0 50px;
     justify-content: space-between;
-    
-
+    align-items: center;
+    // border: 1px solid blue;
 
     .navTitle {
       font-weight: 600;
@@ -23,33 +23,17 @@
       cursor: pointer;
     }
 
-    .options{
-      display: flex;
-      .flagButton{
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        border: none;
-        background: inherit;
-        color: blue;
-        .iconFlag{
-          width: 20px;
-          height: 20px;
-          object-fit: fill;
-          margin: 0 10px;
-        }
-      }
-    }
   }
 
   .navRight {
-    width: 35.5%;
+    padding:0 20px;
+    width: 33.5%;
+    max-width: 34.7%;
     background-color: #0B0E14;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-
+    // border: 1px solid green;
 
     ul {
       color: white;
@@ -71,78 +55,96 @@
     display: none;
   }
 
-  .side_bar{
-    width: 50%;
+  .sidebar{
+    
+    // position: absolute;
+    float: right;
+    width: 60%;
+    background-color: white;
     height: 100vh;
     position: fixed;
-    display: block;
-    background-color: #ffffff;
-    display: none;
-    // border: 1px solid black;
     z-index: 999;
-    float: right;
+    display: none;
+    align-items: center;
+    text-align: center;
+    
+    .sidebar-link{
+      padding: 100px 20px;
+    }
+    .x-btn{
+      float: right;
+      margin-right: 15px;
+    }
   }
-
 }
 
-@media (max-width:767px){
+@media (min-width:1200px) and (max-width:1440px){
   .navbar{
-    padding-left: 20px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+  .navbar{
+      width: 100%;
+
+  }
+}
+@media (min-width: 767px) and (max-width: 991px){
+  .navbar{
+    width: 100%;
+
+    .navLeft{
+      width: 120%;
+    }
+
+    .navRight{
+      width: 40%;
+    }
+
+  }
+}
+
+@media (max-width: 766px){
+
+  .navbar{
+    width: 100%;
+
     .navLeft{
       width: 80%;
+      border-left: none;
 
-      .logo{
-        width: 40px;
-        height: 40px;
-      }
-
-      .navTitle{
-        font-style: normal;
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 18px;
-      }
-
-      select{
+      .select{
         display: none;
       }
     }
-
+    
     .navRight{
       display: none;
     }
-
     .sidebarNav{
-      width: 20%;
       display: flex;
       align-items: center;
-      justify-content: center;
     }
   }
-
 }
 
-@media (min-width:767px) and (max-width:991px){
+@media (max-width: 575.98px){
   .navbar{
-    padding-left: 20px;
-   
-    .navLeft{
-      width:80%;
+    width: 100%;
+    border-left: none;
+    border-right: none;
 
-      select{
+    .navLeft{
+      width: 70%;
+
+      .select{
         display: none;
       }
     }
-
+    
     .navRight{
       display: none;
-    }
-
-    .sidebarNav{
-      width: 20%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
   }
 }

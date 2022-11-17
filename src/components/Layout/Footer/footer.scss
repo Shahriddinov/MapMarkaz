@@ -2,12 +2,12 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: #1A212C;;
+    background-color: #1A212C;
+
     .card{
-        width: 350px;
-        height: 320px;
-        padding: 35px 50px;
+        width: 29%;
         color: white;
+        padding:10px 0 0 50px;
 
         h3{
             width: 190px;
@@ -22,7 +22,6 @@
             }
         }
         p{
-            width: 324px;
             font-family: 'Poppins';
             font-size: 18px;
             font-weight: 400;
@@ -35,12 +34,12 @@
     }
     .bottom{
         border-top: 1px solid rgba(168, 168, 167, 1);
-        width: 95%;
-        padding: 0 40px;
+        width: 97%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         color: rgba(168, 168, 167, 1);
+        padding: 0 10px;
 
 
             button{
@@ -53,6 +52,30 @@
                 border: none;
                 align-items: center;
             }
+        
+    }
+}
+@media (min-width:767) and (max-width: 1200px){
+    .footer{
+        width: 100%;
+        display: flex;
+
+        .card{
+            width: 50%;
+            padding: 20px 10px 0 50px;
+        }
+    }
+}
+
+@media (max-width: 766.98px){
+    .footer{
+        width: 100%;
+        display: block;
+
+        .card{
+            width: 50%;
+        }
+
         
     }
 }

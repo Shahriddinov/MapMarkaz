@@ -1,0 +1,313 @@
+@import '../global';
+
+@mixin hm-text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    text-indent: 30px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #191E29;
+}
+
+
+.historyMapmarkaz{
+    width: 100%;
+    padding: 100px 50px;
+
+    .history-mapmarkaz{
+        width: 100%;
+
+        .hm-box{
+            width: 100%;
+            display: flex;
+
+
+            .hm-box-left{
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+
+                img{
+                    margin-left: 10px;
+                }
+            }
+
+            .hm-box-right{
+                width: 50%;
+                
+
+                .title{
+                    padding-top: 40px;
+                    @include title();
+                }
+
+                p{
+                    padding-top: 10px;
+                    @include hm-text();                    
+                }
+            }
+        }
+
+        .hm-soldiers{
+            display: flex;
+
+            .hm-soldiers-left{
+                display: flex;
+                justify-content: space-around;
+
+                .soldier-img{
+                    text-align: center;
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18.1156px;
+                    line-height: 22px;
+                    text-align: center;
+                    margin-right: 20px;
+                    
+                }
+            }
+
+            .hm-soldiers-right{
+                @include hm-text();                    
+                padding: 10px 20px ;
+
+            }
+        }
+
+        .portret{
+            width: 100%;
+
+            .portret-pic{
+                display: flex;
+
+                img{
+                    width: 50%;
+                }
+            }
+            .portret-text{
+                @include hm-text();
+            }
+        }
+
+        .hm-posts{
+            width: 100%;
+            padding: 50px 0;
+
+            .title-img{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+
+                p{
+                    font-family: 'Montserrat';
+                    font-size: 30px;
+                    font-weight: 700;
+                    width: 32%;
+                }
+                img{
+                    width: 32%;
+                }
+            }
+            .hm-post-text{
+                @include hm-text();
+            }
+        }
+        
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px){
+    .historyMapmarkaz{
+        width: 90%;
+
+        .hm-box{
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+    .historyMapmarkaz{
+        width: 80%;
+
+        .hm-box{
+            width: 100%;
+
+        }
+
+        .hm-soldiers{
+
+            .hm-soldiers-left{
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .hm-soldiers-right{
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media (min-width:767px) and (max-width: 991.98px){
+    .historyMapmarkaz{
+        width: 80%;
+
+        .history-mapmarkaz{
+
+            .hm-box{
+                width: 100%;
+    
+            }
+    
+            .hm-soldiers{
+                display: block;
+
+                .hm-soldiers-left{
+                    width: 95%;
+                    display: flex;
+                }
+                .hm-soldiers-right{
+                    width: 95%;
+                }
+            }
+    
+            .hm-posts{
+    
+                .title-img{
+    
+                    p{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width:576px) and (max-width:766px){
+    .historyMapmarkaz{
+        width: 80%;
+
+        .history-mapmarkaz{
+
+            .hm-box{
+                width: 100%;
+                display: flex; 
+                flex-wrap: wrap;
+                flex-flow: column-reverse;               
+    
+                    .hm-box-left{
+                        width: 100%;
+                    }
+                    
+                    .hm-box-right{
+                        width: 100%;
+    
+                    }
+        
+                
+    
+            }
+    
+            .hm-soldiers{
+                display: block;
+
+                .hm-soldiers-left{
+                    width: 95%;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .hm-soldiers-right{
+                    width: 95%;
+                }
+            }
+
+            .portret{
+                .portret-pic{
+                    display: block;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+    
+            .hm-posts{
+    
+                .title-img{
+                    display: block;
+    
+                    p{
+                        width: 100%;
+                        font-size: 20px;
+                    }
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width:575px){
+    .historyMapmarkaz{
+        width: 80%;
+
+        .history-mapmarkaz{
+
+            .hm-box{
+                width: 100%;
+                display: flex; 
+                flex-wrap: wrap;
+                flex-flow: column-reverse; 
+                
+                .hm-box-left{
+                    width: 100%;
+                }
+
+                .hm-box-right{
+                    width: 100%;
+
+                }
+    
+            }
+    
+            .hm-soldiers{
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column-reverse;
+
+                .hm-soldiers-left{
+                    width: 95%;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .hm-soldiers-right{
+                    width: 95%;
+                }
+            }
+    
+            .hm-posts{
+    
+                .title-img{
+    
+                    p{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,439 +1,130 @@
-@import './global';
+@import '../global';
 
 
 .screen{
-    width: 100%;
+    width: 1440px;
     display: flex;
-    flex-wrap: wrap;
-    // border: 1px solid red;
-    // border: 1px solid black;
-
-    .left{
-        width: 66%;
-
-
-            .title{
-                @include title();
-    
-            }
-
-
-            .text{
-                @include text();
-            }
+    color: #0B0E14;
+    font-family: 'Montserrat';
+    justify-content: space-between;
+    // padding: 0 20px;
+    .screen-left{
+        width: 864px;
+        padding: 50px 11px 50px 50px;
         
+        .screen-title{
+           @include title();
+        }
 
-        .magazine{
-            width: 95%;
+        .screen-text{
+            @include grey-text();
+            padding-right: 100px;
+        }
+
+        .left-box-cards{
+            width: 100%;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
-        // border: 1px solid black;
+            align-items: center;
+            margin-top: 50px;
 
-            .leftCard{
-                width: 40%;
-                font-family: 'Raleway';
-                font-size: 14px;
-                font-weight: 600;
-                padding: 15px 15px 15px 0;
-                
-                button{
-                    margin-left: 0;
-                    margin-top: 15px; 
-
-                }
-            }
-
-            .rightCard{
+            .box-card{
                 width: 50%;
+                height: 250px;
 
-
-            }
-        }
-    }
-
-    .right{
-        width: 34%;
-    }
-    .bottom{
-        width: 100%;
-        display: flex;
-        
-
-        .b_left{
-            width: 64.5%;
-            margin-left: -50px;
-            padding: 20px 20px 20px 50px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            background-color: #ffffff;
-            // border: 1px solid black;
-            
-
-            .f_card{
-                
-                .links{
-                    p{
-                        color: rgba(29, 113, 184, 1);
-                        text-decoration-line: underline;
-                        cursor: pointer;
-    
-
-                    }
-
-                }
-            }
-
-            .s_card{
-                width: 60%;
-                margin-left: 100px;
-
-                .flags{
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-
-                    
-
-                    p{
-                        width: 60px;
-                        height: 18px;
-                        display: flex;
-                        align-items: center;
-                        font-size: 14px;
-                        font-weight: 500;
-                    }
-                }
-            }
-        }
-
-        .b_right{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 31%;
-            padding: 20px;
-            background: #0B0E14;;
-            backdrop-filter: blur(30px);
-
-
-            .inputs{
-              width: 95%;
-                height: 45px;
-                padding: 10px;
-                display: flex;
-                justify-content: space-around;
-                select{
-                    background-color: transparent;
-                    padding: 10px 25px;
-                    border:1px solid white;
-                    font-size: 20px;
+                p{
+                    font-family: 'Raleway';
+                    font-style: normal;
                     font-weight: 600;
-                    color: white;
-                    width: 220px;
-                    outline: none;
-                    option{
-                        font-size: 20px;
-                        font-weight: 600;
-                        color: black;
-                    }
+                    font-size: 14px;
+                    line-height: 130%;
+                    text-align: justify;
+                    padding-right: 80px;
                 }
-                input{
-                    outline: none;
-                    background-color: transparent;
-                    color: white;
-                    padding: 0 10px;      
-                    border: 1px solid white;          
+
+                button{
+                    width: 150px;
+                    height: 50px;
+                    @include gb_btn();
                 }
             }
-            .celcium{
-                width: 92%;
-                padding: 0 5px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: white;
-                .nowTemp{
-                    .mainCelc{
-                        margin-top: 10px;
-                        font-family: 'Raleway';
-                        font-size: 20px;
-                        font-weight: 500;
-                        text-align: left;
 
+        }
+        
+    }
 
-                    }
-                   
-                }
-                .days{
-                    width: 75%;
-                    display: flex;
-                    margin-left: 20px;
-                    // border: 1px solid red;
-                    
-                    .day_temp{
-                        width: 40%;
-                        overflow: hidden;
+    .screen-right{
+        width: 525px;
+    }
 
-                        // border: 1px solid red;
-                    }
+}
 
+@media (min-width: 1200px) and (max-width:1440px){
+    .screen{
+        width: 100%;
 
-                }
-            }
+    }
+}
+
+@media (min-width: 992px) and (max-width:1199px){
+    .screen{
+        width: 100%;
+
+    }
+}
+@media (min-width: 768px) and (max-width:991px){
+    .screen{
+        width: 100%;
+
+        .screen-left{
+        width: 800px;
+        }
+
+    }
+}
+
+@media (min-width: 576px) and (max-width:767px){
+    .screen{
+        width: 100%;
+        display: block;
+
+        .screen-left{
+            width: 90%;
+        }
+
+        .screen-right{
+            width: 100%;
         }
     }
 }
 
-@media (max-width:575px){
-
+@media (max-width:576px){
     .screen{
+        width: 100%;
         display: block;
-        
-        .left{
-            width: 100%;
-             
-            .title{
-                font-style: normal;
-                font-weight: 700;
-                font-size: 25px;
-                line-height: 30px;
-            }
 
-            .text{
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 120%;
-                text-align: justify;
-            }
+        .screen-left{
+            width: 90%;
 
-            .magazine{
-                flex-wrap: wrap-reverse;
+            .left-box-cards{
 
-                .leftCard{
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column-reverse;
+
+                .box-card{
+                    padding-top: 30px;
                     width: 100%;
+
                     button{
                         width: 100%;
-
-                    }
-                }
-                .rightCard{
-                    width: 100%;
-                }
-            }
-        }
-
-        .right{
-            width: 100%;
-        }
-        .bottom{
-            flex-wrap: wrap-reverse;
-            
-            .b_left{
-                width: 100%; 
-                display: block;
-
-                .f_card{
-
-                    .links{
-                        display: flex;
-                        flex-wrap: wrap;
-                        p{
-                            margin-left: 20px;
-                        }
-                    }
-                }
-
-                .s_card{
-                    width: 100%;
-                    margin-left: 0;
-
-                    .flags{
-                        width: 100%;
                     }
                 }
             }
-
-            .b_right{
-                width: 100%;
-                // margin-left: -20px;
-                padding: 10px 0;
-            }
         }
-    }
-}
 
-@media (min-width:575px) and (max-width:767px){
-
-    .screen{
-        display: block;
-        
-        .left{
+        .screen-right{
             width: 100%;
-        overflow: hidden;
-             
-            .title{
-                font-style: normal;
-                font-weight: 700;
-                font-size: 25px;
-                line-height: 30px;
-            }
-
-            .text{
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 120%;
-                text-align: justify;
-            }
-
-            .magazine{
-                flex-wrap: wrap-reverse;
-
-                // .leftCard{
-                //     width: 100%;
-                // }
-                // .rightCard{
-                //     width: 100%;
-                // }
-            }
-        }
-
-        .right{
-            width: 100%;
-        }
-        .bottom{
-            flex-wrap: wrap-reverse;
-            width: 100%;
-
-
-            .b_left{
-                width: 100%; 
-                display: block;
-
-                .f_card{
-
-                    .links{
-                        display: flex;
-                        flex-wrap: wrap;
-                        p{
-                            margin-left: 20px;
-                        }
-                    }
-                }
-
-                .s_card{
-                    width: 100%;
-                    margin-left: 0;
-
-                    .flags{
-                        width: 100%;
-                    }
-                }
-            }
-
-            .b_right{
-                width: 100%;
-                padding: 10px 0;
-                // margin-left: -20px;
-            }
-        }
-    }
-}
-
-@media (min-width:767px) and (max-width:991px) {
-    .screen{
-        display: block;
-        
-        .left{
-            width: 100%;
-            overflow: hidden;
-             
-            .title{
-                font-style: normal;
-                font-weight: 700;
-                font-size: 25px;
-                line-height: 30px;
-            }
-
-            .text{
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 120%;
-                text-align: justify;
-            }
-
-            .magazine{
-                flex-wrap: wrap-reverse;
-
-                // .leftCard{
-                //     width: 100%;
-                // }
-                // .rightCard{
-                //     width: 100%;
-                // }
-            }
-        }
-
-        .right{
-            width: 100%;
-        }
-
-        .bottom{
-            flex-wrap: wrap-reverse;
-            width: 100%;
-
-
-            .b_left{
-                width: 100%; 
-                display: block;
-
-                .f_card{
-
-                    .links{
-                        display: flex;
-                        flex-wrap: wrap;
-                        p{
-                            margin-left: 20px;
-                        }
-                    }
-                }
-
-                .s_card{
-                    width: 100%;
-                    margin-left: 0;
-
-                    .flags{
-                        width: 100%;
-                    }
-                }
-            }
-
-            .b_right{
-                width: 100%;
-                padding: 10px 0;
-                // margin-left: -20px;
-            }
-        }
-    }
-}
-
-@media (min-width:991px) and (max-width:1350px){
-    .screen{
-        
-        .bottom{
-            
-            .b_left{
-
-                .s_card{
-                    margin-left: 0;
-                    
-                }
-            }
-        
         }
     }
 }
