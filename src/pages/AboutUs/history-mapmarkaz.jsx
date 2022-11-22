@@ -46,12 +46,12 @@ const HistoryMapmarkaz = () => {
                 <div className="hm-box-top">
                     <div className='title' style={{textAlign:'center'}}>{t('story')}</div>
 
-                    <p>{post[0]?.text_ru}</p>
-                    <p>{post[1]?.text_ru}</p>
-                    <p>{post[2]?.text_ru}</p>
-                    <p>{post[3]?.text_ru}</p>
-                    <p>{post[4]?.text_ru}</p>
-                    <p>{post[5]?.text_ru}</p>
+                    <p>{post[0]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                    <p>{post[1]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                    <p>{post[2]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                    <p>{post[3]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                    <p>{post[4]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                    <p>{post[5]?.[`text_${localStorage.getItem("lng")}`]}</p>
                 </div>
 
                 <div className="hm-box-bottom">
@@ -62,15 +62,15 @@ const HistoryMapmarkaz = () => {
                 <div className="hm-box-soldiers">
 
                     <div className="soldier-img">
-                        <img src={sol1}/>
+                        <img src={post[2]?.img1}/>
                         <p>{t('soldier1')}</p>
                     </div>
                     <div className="soldier-img">
-                        <img src={sol2}/>
+                        <img src={post[2]?.img2}/>
                         <p> {t('soldier2')}</p>
                     </div>
                     <div className="soldier-img">
-                        <img src={sol3}/>
+                        <img src={post[3]?.img1}/>
                         <p>{t('soldier3')}</p>
                     </div>
 
@@ -79,11 +79,11 @@ const HistoryMapmarkaz = () => {
                 <div className="hm-box-soldiers">
                     
                     <div className="soldier-img">
-                        <img src={sol4}/>
+                        <img src={post[4]?.img1}/>
                         <p>{t('soldier4')}</p>
                     </div>
                     <div className="soldier-img">
-                        <img src={sol5}/>
+                        <img src={post[5]?.img1}/>
                         <p>{t('soldier5')}</p>
                     </div>
                 </div>

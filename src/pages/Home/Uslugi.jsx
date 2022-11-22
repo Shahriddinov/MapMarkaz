@@ -36,7 +36,7 @@ const Uslugi = () => {
                             <img src={item.img} alt="" />
                         </div>
                         <div className="card-text">
-                            <span>{item.service_name_uz}</span>
+                            <span>{item[`service_name_${localStorage.getItem("lng")}`]}</span>
                         </div>
                     </div>
                 )

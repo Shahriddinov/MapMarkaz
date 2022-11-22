@@ -26,14 +26,14 @@ const HeadsPics = () => {
     
     <div className='headsPics'>
         <div className="headsPics-top">
-        <div className="title"> {aboutUs[0]?.header_ru}</div>
+        <div className="title"> {aboutUs[0]?.[`header_${localStorage.getItem("lng")}`]}</div>
         <img src={aboutUs[0]?.img1}/>
     </div>
 
             <div>
                 
                 <div  className="headsPics-map">
-                    <div className="title">{aboutUs[1]?.header_ru}</div>
+                    <div className="title">{aboutUs[1]?.[`header_${localStorage.getItem("lng")}`]}</div>
                     <div>
                         <img src={aboutUs[1]?.img1} />
                         <img src={aboutUs[1]?.img2} />
@@ -41,7 +41,7 @@ const HeadsPics = () => {
                 </div>
 
                 <div  className="headsPics-map">
-                    <div className="title">{aboutUs[2]?.header_ru}</div>
+                    <div className="title">{aboutUs[2]?.[`header_${localStorage.getItem("lng")}`]}</div>
                     <div>
                         <img src={aboutUs[2]?.img1} />
                         <img src={aboutUs[2]?.img2} />
@@ -49,7 +49,7 @@ const HeadsPics = () => {
                 </div>
 
                 <div className="headsPics-map">
-                    <div className="title">{aboutUs[3]?.header_ru}</div>
+                    <div className="title">{aboutUs[3]?.[`header_${localStorage.getItem("lng")}`]}</div>
                     <div>
                         <img src={aboutUs[3]?.img1} />
                         <img src={aboutUs[3]?.img2} />
@@ -57,7 +57,7 @@ const HeadsPics = () => {
                 </div>
 
                 <div className="headsPics-map">
-                    <div className="title">{aboutUs[4]?.header_ru}</div>
+                    <div className="title">{aboutUs[4]?.[`header_${localStorage.getItem("lng")}`]}</div>
                     <div>
                         <img src={aboutUs[4]?.img1} />
                         <img src={aboutUs[4]?.img2} />
@@ -66,7 +66,7 @@ const HeadsPics = () => {
                 
 
                 <div className="headsPics-map"> 
-                    <div className="title">{aboutUs[5]?.header_ru}</div>
+                    <div className="title">{aboutUs[5]?.[`header_${localStorage.getItem("lng")}`]}</div>
                     <span className='.gr-text'>{t('result')}</span>
                     <div>
                         <img src={aboutUs[5]?.img1} />
