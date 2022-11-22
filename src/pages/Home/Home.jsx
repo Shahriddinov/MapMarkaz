@@ -1,11 +1,11 @@
 import React from "react";
 import "./home.scss";
-import AboutUs from "./aboutUs";
-import Finance from "./finance";
-import Screen from "./screen";
-import Uslugi from "./uslugi";
-import Ads from "./ads";
-import Flags from './flags'
+import AboutUs from "./aboutUs.jsx";
+import Finance from "./finance.jsx";
+import Screen from "./screen.jsx";
+import Uslugi from "./uslugi.jsx";
+import Ads from "./ads.jsx";
+import Flags from './flags.jsx'
 
 const Home = () => {
 

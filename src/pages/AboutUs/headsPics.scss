@@ -3,6 +3,8 @@
 .title{
     @include title();
     margin-bottom: 30px;
+    color: rgb(43, 43, 201);
+    text-align: center
 }
 
 .simple-text{
@@ -29,7 +31,7 @@
 
         div{
             img{
-                width: 50%;
+                width: 100%;
             }
         }
     }
@@ -38,11 +40,9 @@
         padding: 100px 30px;
 
         .hp-bottom-post{
-            display: flex;
-            justify-content: space-between;
 
-            .hp-post-left{
-                width: 880px;
+            .hp-post-st{
+                width: 100%;
 
                 .title{
                     padding-right: 150px;
@@ -54,8 +54,8 @@
                 }
             }
 
-            .hp-post-right{
-                width: 400px;
+            .hp-post-lm{
+                width: 100%;
 
                 p{
                     font-family: 'Montserrat';
@@ -64,7 +64,7 @@
                     font-size: 20px;
                     line-height: 145.4%;
                     text-align: center;
-                    color: #0B0E14;
+                    color: #0e46b6;
                 }
             }
         }

@@ -12,7 +12,8 @@ const Select = () => {
     };
 
   return (
-    <select onChange={ e => handleChangeLng(e.target.value)}     >
+    <select onChange={ e => handleChangeLng(e.target.value)}>
+        <option onClick={e =>handleChangeLng("uz_latin")} value="uz_latin">O'zbek</option>
 		    <option onClick={e =>handleChangeLng('ru')} value='ru'>Русский</option>
         <option onClick={e =>handleChangeLng('uz')} value='uz'>Ўзбек</option>
     </select>

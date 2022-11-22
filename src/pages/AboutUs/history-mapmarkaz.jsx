@@ -28,33 +28,39 @@ const HistoryMapmarkaz = () => {
   async function getPosts(){
     const res = await doGet('History/')
     setPost(res.data)
+    console.log(res.data);
 
-    console.log(post);
   }
 
   useEffect(()=>{
     getPosts()
+
   },[])
+
 
   return (
     <div className='historyMapmarkaz'>
         <div className="history-mapmarkaz">
             <div className="hm-box">
-                <div className="hm-box-left">
+
+                <div className="hm-box-top">
+                    <div className='title' style={{textAlign:'center'}}>{t('story')}</div>
+
+                    <p>{post[0]?.text_ru}</p>
+                    <p>{post[1]?.text_ru}</p>
+                    <p>{post[2]?.text_ru}</p>
+                    <p>{post[3]?.text_ru}</p>
+                    <p>{post[4]?.text_ru}</p>
+                    <p>{post[5]?.text_ru}</p>
+                </div>
+
+                <div className="hm-box-bottom">
                     <img src={post[0]?.img1} />
                     <img src={post[1]?.img1} />
                 </div>
 
-                <div className="hm-box-right">
-                    <div className='title'>{t('story')}</div>
+                <div className="hm-box-soldiers">
 
-                    <p>{post[0]?.text}</p>
-                    <p>{post[1]?.text}</p>
-                </div>
-            </div>
-
-            <div className="hm-soldiers">
-                <div className="hm-soldiers-left">
                     <div className="soldier-img">
                         <img src={sol1}/>
                         <p>{t('soldier1')}</p>
@@ -67,17 +73,11 @@ const HistoryMapmarkaz = () => {
                         <img src={sol3}/>
                         <p>{t('soldier3')}</p>
                     </div>
+
                 </div>
 
-                <div className="hm-soldiers-right">
-
-                    <p>{post[2]?.text}</p>
-                    <p>{post[3]?.text}</p>
-                </div>
-            </div>
-
-            <div className="hm-soldiers">
-                <div className="hm-soldiers-left">
+                <div className="hm-box-soldiers">
+                    
                     <div className="soldier-img">
                         <img src={sol4}/>
                         <p>{t('soldier4')}</p>
@@ -87,19 +87,15 @@ const HistoryMapmarkaz = () => {
                         <p>{t('soldier5')}</p>
                     </div>
                 </div>
-
-                <div className="hm-soldiers-right">
-
-                    <p>{post[4]?.text}</p>
-                    <p>{post[5]?.text}</p>
-                </div>
             </div>
 
+
             <div className="portret">
-                <div className="portret-pic">
-                    <img src={port1} />
-                    <img src={port2} />
-                </div>
+
+                <img src={port1} />
+                <p style={{textAlign:'center', fontSize:'20px'}}>{t('topografi')}</p>
+                <img src={port2} />
+
 
                 <div className="portret-text">
                    
@@ -113,20 +109,21 @@ const HistoryMapmarkaz = () => {
 
             <div className="hm-posts">
 
+                <p className='hm-posts-imgs-title-red'>{t('tech')}</p>
+                <p className='hm-posts-imgs-title'>{t('photos')}</p>
                 <div className="title-img">
-                    <p>{t('photos')}</p>
                     <img src={pic1} />
                     <img src={pic2} />
                 </div>
 
+                <p className='hm-posts-imgs-title'>{t('replacing')}</p>
                 <div className="title-img">
-                    <p>{t('replacing')}</p>
                     <img src={pic3} />
                     <img src={pic4} />
                 </div>
 
+                <p className='hm-posts-imgs-title'>{t('oldCar')}</p>
                 <div className="title-img">
-                    <p>{t('oldCar')}</p>
                     <img src={pic5} />
                     <img src={pic6} />
                 </div>

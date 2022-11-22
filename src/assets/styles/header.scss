@@ -130,6 +130,10 @@
 }
 
 @media (max-width: 575.98px){
+
+  .navTitle{
+    display: none;
+  }
   .navbar{
     width: 100%;
     border-left: none;

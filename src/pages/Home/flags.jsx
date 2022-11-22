@@ -57,9 +57,28 @@ const Flags = () => {
   const getThatDay=(e)=>{
     
     setSDaily(e.target.value)
-    console.log(sDaily);
     axios.get(`https://api.openweathermap.org/data/2.5/onecall?lon=${lons}&lat=${lats}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{
       setDaily(response.data)
+
+    })
+    
+  }
+  
+  
+  useEffect(()=>{
+
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lon=${lons}&lat=${lats}&q=${location}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{  
+      setData(response.data)
+      setDt(response.data.dt)
+      setDesc(response.data.weather[0].description)
+      setFeelLike(response.data.main.feels_like)
+      setHumadity(response.data.main.humidity)
+      setLons(response.data.coord.lon)
+      setLats(response.data.coord.lat)
+      setTemp(response.data.main.temp)
+      let cityTimeHour = new Date().getHours()
+
+      setHour(cityTimeHour)
 
       switch (sDaily) {
         case "0" : setTemp(daily.current.temp)
@@ -83,25 +102,6 @@ const Flags = () => {
         case "6" : setTemp(daily.hourly[6].temp)
           break;
       }
-    })
-    
-  }
-  
-  
-  useEffect(()=>{
-
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lon=${lons}&lat=${lats}&q=${location}&appid=${weather_key}&units=metric&lang=ru`).then((response)=>{  
-      setData(response.data)
-      setDt(response.data.dt)
-      setDesc(response.data.weather[0].description)
-      setFeelLike(response.data.main.feels_like)
-      setHumadity(response.data.main.humidity)
-      setLons(response.data.coord.lon)
-      setLats(response.data.coord.lat)
-      setTemp(response.data.main.temp)
-      let cityTimeHour = new Date().getHours()
-
-      setHour(cityTimeHour)
 
     })
     
@@ -129,9 +129,7 @@ const Flags = () => {
                 <div className='rightbox-mini-flag'>
 
                   <noindex>
-                    <a href="https://info.flagcounter.com/8vsx">
-                      <img src="https://s01.flagcounter.com/count2/8vsx/bg_FFFFFF/txt_000000/border_FFFFFF/columns_5/maxflags_12/viewers_3/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"/>
-                    </a>
+                  <a><img src="https://s01.flagcounter.com/count2/t9Wd/bg_FFFFFF/txt_000000/border_FFFFFF/columns_5/maxflags_12/viewers_3/labels_0/pageviews_0/flags_0/percent_0/"/></a>
                   </noindex>
 
                 </div>

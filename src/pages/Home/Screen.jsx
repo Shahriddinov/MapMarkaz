@@ -8,6 +8,11 @@ const Screen = () => {
 
 	const {t, i18n} = useTranslation();
 
+    const toUsl=()=>{
+        window.scrollTo(0,2100)
+        
+    }
+
   return (
     <div className='screen'>
         <div className="screen-left">
@@ -20,7 +25,7 @@ const Screen = () => {
                 <div className='box-card'>
                     <p>{t('material')}</p>
 
-                    <button>{t('allServer')}</button>
+                    <button onClick={toUsl}>{t('allServer')}</button>
                 </div>
                 <div className='box-card'>
                     <img src={jurnal} width='100%'/>

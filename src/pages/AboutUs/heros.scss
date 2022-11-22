@@ -3,12 +3,15 @@
 
 .heros{
     width: 90%;
-    padding: 100px 50px;
+    padding: 50px 50px;
 
     .title{
         @include title();
         margin-bottom: 30px;
+        color: rgb(206, 44, 44);
     }
+
+
 
     .hero-map{
         display: flex;
