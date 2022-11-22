@@ -15,8 +15,6 @@ const Ads = () => {
     async function getFiles(){
         await axios.get('http://backend.mapmarkaz.uz/Announcements/').then((res)=>{
             setFiles(res.data)
-            console.log('files:',files[0]?.file);
-            console.log('res:',res);
         })
     }
 

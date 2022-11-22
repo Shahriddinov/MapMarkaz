@@ -21,7 +21,7 @@ const Heros = () => {
   return (
     <div className='heros'>
 
-        <div className="title">{t('heroes')}</div>
+        <div className="title">1941-45. {t('heroes')}</div>
         
         <div className="hero-map">
             {pics.map((item)=>{
