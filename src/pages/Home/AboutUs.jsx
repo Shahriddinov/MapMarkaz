@@ -27,8 +27,8 @@ const AboutUs = () => {
             </div>
             <div className="post-text">
                 <div className='title'>{t('weAbout')}</div>
-                <p>{texts[0]?.text_uz}</p>
-                <p>{texts[1]?.text_uz}</p>
+                <p>{texts[0]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                <p>{texts[1]?.[`text_${localStorage.getItem("lng")}`]}</p>
             </div>
         </div>
 
@@ -37,8 +37,8 @@ const AboutUs = () => {
                 <img src={postImg2} alt="" />
             </div>
             <div className="post-text">
-                <p>{texts[2]?.text_uz}</p>
-                <p>{texts[3]?.text_uz}</p>
+                <p>{texts[2]?.[`text_${localStorage.getItem("lng")}`]}</p>
+                <p>{texts[3]?.[`text_${localStorage.getItem("lng")}`]}</p>
             </div>
         </div>
 
@@ -47,7 +47,7 @@ const AboutUs = () => {
                 <img src={postImg3} alt="" />
             </div>
             <div className="post-text">
-                <p>{texts[4]?.text_uz}</p>
+                <p>{texts[4]?.[`text_${localStorage.getItem("lng")}`]}</p>
                 
             </div>
         </div>
