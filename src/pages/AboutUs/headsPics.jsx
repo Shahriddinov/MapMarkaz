@@ -26,7 +26,8 @@ const HeadsPics = () => {
     
     <div className='headsPics'>
         <div className="headsPics-top">
-        <div className="title"> {aboutUs[0]?.[`header_${localStorage.getItem("lng")}`]}</div>
+            <p style={{color:'gray',fontSize:'20px'}}>{t('become')}</p>
+        <div className="title" style={{color:'red'}}> {aboutUs[0]?.[`header_${localStorage.getItem("lng")}`]}</div>
         <img src={aboutUs[0]?.img1}/>
     </div>
 
@@ -67,7 +68,7 @@ const HeadsPics = () => {
 
                 <div className="headsPics-map"> 
                     <div className="title">{aboutUs[5]?.[`header_${localStorage.getItem("lng")}`]}</div>
-                    <span className='.gr-text'>{t('result')}</span>
+                    <span style={{textAlign:'center'}} className='gr-text'>{t('result')}</span>
                     <div>
                         <img src={aboutUs[5]?.img1} />
                         <img src={aboutUs[5]?.img2} />

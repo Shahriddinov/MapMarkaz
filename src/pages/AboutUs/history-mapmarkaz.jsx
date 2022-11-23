@@ -63,15 +63,15 @@ const HistoryMapmarkaz = () => {
 
                     <div className="soldier-img">
                         <img src={post[2]?.img1}/>
-                        <p>{t('soldier1')}</p>
+                        <p style={{color:'blue'}}>{t('soldier1')}</p>
                     </div>
                     <div className="soldier-img">
                         <img src={post[2]?.img2}/>
-                        <p> {t('soldier2')}</p>
+                        <p style={{color:'blue'}}> {t('soldier2')}</p>
                     </div>
                     <div className="soldier-img">
                         <img src={post[3]?.img1}/>
-                        <p>{t('soldier3')}</p>
+                        <p style={{color:'blue'}}>{t('soldier3')}</p>
                     </div>
 
                 </div>
@@ -80,11 +80,11 @@ const HistoryMapmarkaz = () => {
                     
                     <div className="soldier-img">
                         <img src={post[4]?.img1}/>
-                        <p>{t('soldier4')}</p>
+                        <p style={{color:'blue'}}>{t('soldier4')}</p>
                     </div>
                     <div className="soldier-img">
                         <img src={post[5]?.img1}/>
-                        <p>{t('soldier5')}</p>
+                        <p style={{color:'blue'}}>{t('soldier5')}</p>
                     </div>
                 </div>
             </div>
@@ -134,9 +134,8 @@ const HistoryMapmarkaz = () => {
                     <p>{t('during')}</p>
 
                     <p>{t('august')}</p>
-                    <p>{t('think')}</p>
 
-                    <p>{t('become')}</p>
+                    <p>{t('mln')}</p>
                 </div>
 
             </div>
